@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardAction, CardContent, CardHeader } from '@/components/ui/card'
 import { folderAccent } from '@/lib/utils'
-import { Pencil, Trash2, Globe, ChevronRight } from 'lucide-react'
+import { Pencil, Trash2, Globe, ChevronRight, Heart } from 'lucide-react'
 import { getIconByName } from '@/components/icon-picker'
 
 interface BookmarkCardProps {
@@ -12,6 +12,7 @@ interface BookmarkCardProps {
   onEdit: (bookmark: Bookmark) => void
   onDelete: (id: string) => void
   onNavigate?: (folderId: string) => void
+  onToggleFavorite?: (id: string, favorite: boolean) => void
 }
 
 function getFavicon(url: string) {
@@ -23,7 +24,7 @@ function getFavicon(url: string) {
   }
 }
 
-export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate }: BookmarkCardProps) {
+export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate, onToggleFavorite }: BookmarkCardProps) {
   if (bookmark.isFolder) {
     const accent = folderAccent(bookmark.id)
     const FolderIcon = getIconByName(metadata?.icon)
@@ -111,11 +112,24 @@ export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate 
             </a>
           </div>
         </div>
-        <CardAction className="gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+        <CardAction className="gap-0.5">
           <Button
             variant="ghost"
             size="icon"
-            className="size-7 rounded-lg hover:bg-[#f1f5f9]"
+            className="size-7 rounded-lg hover:bg-[#fef2f2]"
+            onClick={(e: React.MouseEvent) => {
+              e.stopPropagation()
+              onToggleFavorite?.(bookmark.id, !metadata?.favorite)
+            }}
+          >
+            <Heart
+              className={`size-3.5 transition-colors ${metadata?.favorite ? 'fill-[#ef4444] text-[#ef4444]' : 'text-[#cbd5e1] hover:text-[#ef4444]'}`}
+            />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-7 rounded-lg hover:bg-[#f1f5f9] opacity-0 group-hover:opacity-100 transition-opacity"
             onClick={() => onEdit(bookmark)}
           >
             <Pencil className="size-3.5 text-[#64748b]" />
@@ -123,7 +137,7 @@ export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate 
           <Button
             variant="ghost"
             size="icon"
-            className="size-7 rounded-lg hover:bg-red-50"
+            className="size-7 rounded-lg hover:bg-red-50 opacity-0 group-hover:opacity-100 transition-opacity"
             onClick={() => onDelete(bookmark.id)}
           >
             <Trash2 className="size-3.5 text-[#ef4444]" />

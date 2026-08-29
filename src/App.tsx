@@ -14,6 +14,7 @@ import {
   FolderOpen,
   FolderPlus,
   Home,
+  Heart,
   Plus,
   Search,
   Star,
@@ -54,7 +55,13 @@ function App() {
   }, [bookmarks, currentFolderId])
 
   const currentItems = useMemo(() => {
-    let items = getChildren(currentFolderId)
+    let items: Bookmark[]
+
+    if (currentFolderId === 'favorites') {
+      items = bookmarks.filter((b) => !b.isFolder && metadata[b.id]?.favorite)
+    } else {
+      items = getChildren(currentFolderId)
+    }
 
     if (search) {
       const q = search.toLowerCase()
@@ -67,22 +74,26 @@ function App() {
       )
     }
 
-    const foldersList = items.filter((b) => b.isFolder)
-    const bookmarksList = items.filter((b) => !b.isFolder)
+    if (currentFolderId !== 'favorites') {
+      const foldersList = items.filter((b) => b.isFolder)
+      const bookmarksList = items.filter((b) => !b.isFolder)
 
-    const sortFn = (a: Bookmark, b: Bookmark) => {
-      switch (sort) {
-        case 'newest': return (b.dateAdded ?? 0) - (a.dateAdded ?? 0)
-        case 'oldest': return (a.dateAdded ?? 0) - (b.dateAdded ?? 0)
-        case 'alpha': return a.title.localeCompare(b.title)
-        case 'alpha-reverse': return b.title.localeCompare(a.title)
-        default: return 0
+      const sortFn = (a: Bookmark, b: Bookmark) => {
+        switch (sort) {
+          case 'newest': return (b.dateAdded ?? 0) - (a.dateAdded ?? 0)
+          case 'oldest': return (a.dateAdded ?? 0) - (b.dateAdded ?? 0)
+          case 'alpha': return a.title.localeCompare(b.title)
+          case 'alpha-reverse': return b.title.localeCompare(a.title)
+          default: return 0
+        }
       }
+
+      foldersList.sort(sortFn)
+      bookmarksList.sort(sortFn)
+      return [...foldersList, ...bookmarksList]
     }
 
-    foldersList.sort(sortFn)
-    bookmarksList.sort(sortFn)
-    return [...foldersList, ...bookmarksList]
+    return items
   }, [bookmarks, currentFolderId, getChildren, metadata, search, sort])
 
   const sidebarFolders = useMemo(() => {
@@ -148,6 +159,16 @@ function App() {
   function handleNavigate(folderId: string) {
     setCurrentFolderId(folderId)
     setSearch('')
+  }
+
+  function handleToggleFavorite(id: string, favorite: boolean) {
+    const existing = metadata[id]
+    setMeta(id, {
+      tags: existing?.tags ?? [],
+      description: existing?.description ?? '',
+      icon: existing?.icon,
+      favorite,
+    })
   }
 
   if (loading) {
@@ -244,9 +265,11 @@ function App() {
           <div className="flex items-center justify-between gap-4 mb-5">
             <div className="min-w-0 flex-1">
               <h1 className="text-[22px] font-bold text-[#0f172a] tracking-tight">
-                {breadcrumbs.length > 0
-                  ? breadcrumbs[breadcrumbs.length - 1].title || 'Untitled'
-                  : 'Bookmarks Bar'}
+                {currentFolderId === 'favorites'
+                  ? 'Favorites'
+                  : breadcrumbs.length > 0
+                    ? breadcrumbs[breadcrumbs.length - 1].title || 'Untitled'
+                    : 'Bookmarks Bar'}
               </h1>
               <nav className="flex items-center gap-1 text-[12px] text-[#94a3b8] mt-1.5">
                 <button
@@ -294,6 +317,19 @@ function App() {
                 onClick={() => handleNavigate('2')}
               >
                 <Star className="size-4.5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className={`size-10 rounded-xl transition-all duration-200 ${
+                  currentFolderId === 'favorites'
+                    ? 'bg-[#ef4444]/10 text-[#ef4444]'
+                    : 'text-[#64748b] hover:bg-[#fef2f2] hover:text-[#ef4444]'
+                }`}
+                title="Favorites"
+                onClick={() => handleNavigate('favorites')}
+              >
+                <Heart className="size-4.5" />
               </Button>
               <div className="w-px h-6 bg-[#e2e8f0] mx-1" />
               {folderCount > 0 && (
@@ -362,15 +398,25 @@ function App() {
           {currentItems.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center">
               <div className="size-20 rounded-2xl bg-gradient-to-br from-[#f1f5f9] to-[#f0f4ff] flex items-center justify-center mb-5 shadow-inner">
-                <Folder className="size-10 text-[#cbd5e1]" />
+                {currentFolderId === 'favorites' ? (
+                  <Heart className="size-10 text-[#cbd5e1]" />
+                ) : (
+                  <Folder className="size-10 text-[#cbd5e1]" />
+                )}
               </div>
               <p className="text-[#334155] font-semibold text-[16px]">
-                {search ? 'No results found' : 'This folder is empty'}
+                {search
+                  ? 'No results found'
+                  : currentFolderId === 'favorites'
+                    ? 'No favorites yet'
+                    : 'This folder is empty'}
               </p>
               <p className="text-[#94a3b8] text-[13px] mt-1.5 max-w-[300px] leading-relaxed">
                 {search
                   ? 'Try adjusting your search terms or check a different folder'
-                  : 'Add bookmarks or create folders to organize your links'}
+                  : currentFolderId === 'favorites'
+                    ? 'Click the heart icon on any bookmark to add it to favorites'
+                    : 'Add bookmarks or create folders to organize your links'}
               </p>
               {!search && (
                 <Button
@@ -397,6 +443,7 @@ function App() {
                   onEdit={handleEdit}
                   onDelete={deleteBookmark}
                   onNavigate={handleNavigate}
+                  onToggleFavorite={handleToggleFavorite}
                 />
               ))}
             </div>
