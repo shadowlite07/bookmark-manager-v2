@@ -1,7 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-29T00:00:00.000Z",
-  "note": "Restructured bookmarks — import this to replace your current bookmark structure",
+  "exportedAt": "2026-08-29T07:52:31.667Z",
   "bookmarks": [
     {
       "id": "1",
@@ -9,329 +8,3871 @@
       "title": "Bookmarks Bar",
       "url": "",
       "isFolder": true,
-      "children": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-      "metadata": { "icon": "FolderOpen", "favorite": false, "tags": [], "description": "" }
+      "children": [
+        "100",
+        "200",
+        "201",
+        "210",
+        "220",
+        "230",
+        "300",
+        "400",
+        "410",
+        "420",
+        "430",
+        "431",
+        "441",
+        "500",
+        "501",
+        "510",
+        "520",
+        "540",
+        "550",
+        "600",
+        "610",
+        "620",
+        "630",
+        "640",
+        "641",
+        "642",
+        "643",
+        "644",
+        "645",
+        "646",
+        "647",
+        "700",
+        "800",
+        "804",
+        "900",
+        "910"
+      ],
+      "metadata": {
+        "icon": "FolderOpen",
+        "favorite": false,
+        "tags": [],
+        "description": ""
+      }
     },
-
     {
       "id": "100",
       "parentId": "1",
       "title": "AI Chat & Assistants",
       "url": "",
       "isFolder": true,
-      "children": ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111"],
-      "metadata": { "icon": "Bot", "favorite": true, "tags": ["ai", "chat"], "description": "All AI chatbots and assistant platforms — Claude, Gemini, ChatGPT, Grok, and more" }
+      "children": [
+        "1045",
+        "1046",
+        "1047",
+        "1048",
+        "1049",
+        "1050",
+        "1051",
+        "1052",
+        "1053",
+        "1054",
+        "1055"
+      ],
+      "metadata": {
+        "icon": "Bot",
+        "favorite": true,
+        "tags": [],
+        "description": "All AI chatbots and assistant platforms"
+      }
     },
-    { "id": "101", "parentId": "100", "title": "Claude", "url": "https://claude.ai/new", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "anthropic", "chat"], "description": "Anthropic's Claude — AI assistant for coding, analysis, and creative work", "icon": "Brain" } },
-    { "id": "102", "parentId": "100", "title": "ChatGPT", "url": "https://chatgpt.com/", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "openai", "chat"], "description": "OpenAI's ChatGPT — general-purpose AI assistant", "icon": "Sparkles" } },
-    { "id": "103", "parentId": "100", "title": "Google Gemini", "url": "https://gemini.google.com/app?hl=en-IN", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "google", "chat"], "description": "Google's Gemini — multimodal AI assistant", "icon": "Star" } },
-    { "id": "104", "parentId": "100", "title": "Grok", "url": "https://grok.com/", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "xai", "chat"], "description": "xAI's Grok — real-time knowledge AI assistant", "icon": "Zap" } },
-    { "id": "105", "parentId": "100", "title": "DeepSeek", "url": "https://chat.deepseek.com/", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "chat"], "description": "DeepSeek — open-source AI with strong reasoning capabilities", "icon": "Brain" } },
-    { "id": "106", "parentId": "100", "title": "Meta AI", "url": "https://meta.ai/?__pwa=1", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "meta", "chat"], "description": "Meta's AI assistant — powered by Llama models", "icon": "Bot" } },
-    { "id": "107", "parentId": "100", "title": "Perplexity", "url": "https://www.perplexity.ai/", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "search", "research"], "description": "AI-powered search engine with cited answers", "icon": "Search" } },
-    { "id": "108", "parentId": "100", "title": "Qwen Coder", "url": "https://coder.qwen.ai/", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "coding", "alibaba"], "description": "Alibaba's Qwen coding assistant — specialized for code generation", "icon": "Code" } },
-    { "id": "109", "parentId": "100", "title": "Google AI Studio", "url": "https://aistudio.google.com/prompts/new_chat?model=gemini-3-flash-preview", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "google", "prompting"], "description": "Google's AI Studio — build prompts and test Gemini models", "icon": "Wand2" } },
-    { "id": "110", "parentId": "100", "title": "Mistral Vibe", "url": "https://chat.mistral.ai/work", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "mistral", "chat"], "description": "Mistral AI's chat interface — European AI models", "icon": "Bot" } },
-    { "id": "111", "parentId": "100", "title": "Mistral AI Studio", "url": "https://console.mistral.ai/home", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "mistral", "api"], "description": "Mistral AI console — API access and model management", "icon": "Settings" } },
-
     {
       "id": "200",
       "parentId": "1",
       "title": "AI Development",
       "url": "",
       "isFolder": true,
-      "children": ["201", "202", "203", "210", "211", "212", "220", "221", "222", "223", "224", "225", "226", "230", "231"],
-      "metadata": { "icon": "Brain", "favorite": true, "tags": ["ai", "development", "models"], "description": "AI models, agents, frameworks, MCP servers, and development tools" }
+      "children": [
+        "1140",
+        "1143"
+      ],
+      "metadata": {
+        "icon": "Brain",
+        "favorite": true,
+        "tags": [],
+        "description": "AI models, agents, frameworks, and tools"
+      }
     },
     {
       "id": "201",
-      "parentId": "200",
+      "parentId": "1",
       "title": "Models & Research",
       "url": "",
       "isFolder": true,
-      "children": ["204", "205", "206", "207", "208", "209"],
-      "metadata": { "icon": "Cpu", "favorite": false, "tags": ["ai", "models", "huggingface"], "description": "AI model repositories on Hugging Face — TTS, image gen, voice" }
+      "children": [
+        "1197"
+      ],
+      "metadata": {
+        "icon": "Cpu",
+        "favorite": false,
+        "tags": [],
+        "description": "AI model repositories on Hugging Face"
+      }
     },
-    { "id": "204", "parentId": "201", "title": "FLUX.1-schnell (Image Gen)", "url": "https://huggingface.co/black-forest-labs/FLUX.1-schnell", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "image-generation", "flux"], "description": "Black Forest Labs' FLUX — fast image generation model" } },
-    { "id": "205", "parentId": "201", "title": "Qwen3 TTS (Voice)", "url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "tts", "voice", "qwen"], "description": "Qwen3 text-to-speech — custom voice synthesis" } },
-    { "id": "206", "parentId": "201", "title": "VibeVoice (Microsoft)", "url": "https://huggingface.co/microsoft/VibeVoice-Realtime-0.5B", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "voice", "microsoft"], "description": "Microsoft's VibeVoice — real-time voice AI" } },
-    { "id": "207", "parentId": "201", "title": "IndicF5 (Indian Languages)", "url": "https://huggingface.co/ai4bharat/IndicF5/tree/main", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "tts", "indian"], "description": "AI4Bharat's IndicF5 — text-to-speech for Indian languages" } },
-    { "id": "208", "parentId": "201", "title": "VoxCPM Demo", "url": "https://huggingface.co/spaces/openbmb/VoxCPM-Demo", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "voice", "demo"], "description": "VoxCPM — voice cloning and speech generation demo" } },
-    { "id": "209", "parentId": "201", "title": "ByteDance Tar-1.5B", "url": "https://huggingface.co/ByteDance-Seed/Tar-1.5B/tree/main", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "model", "bytedance"], "description": "ByteDance's Tar model — language model research" } },
     {
       "id": "210",
-      "parentId": "200",
+      "parentId": "1",
       "title": "Agents & Frameworks",
       "url": "",
       "isFolder": true,
-      "children": ["211", "212", "213", "214", "215"],
-      "metadata": { "icon": "Bot", "favorite": false, "tags": ["ai", "agents"], "description": "AI agent frameworks and multi-agent systems" }
+      "children": [
+        "1058",
+        "1059",
+        "1094",
+        "1100",
+        "1102",
+        "1109",
+        "1151",
+        "1159"
+      ],
+      "metadata": {
+        "icon": "Bot",
+        "favorite": false,
+        "tags": [],
+        "description": "AI agent frameworks and multi-agent systems"
+      }
     },
-    { "id": "211", "parentId": "210", "title": "ElizaOS", "url": "https://github.com/elizaOS/eliza", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "agents", "framework"], "description": "Autonomous AI agents framework — build and deploy AI agents" } },
-    { "id": "212", "parentId": "210", "title": "MetaGPT", "url": "https://github.com/FoundationAgents/MetaGPT", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "agents", "multi-agent"], "description": "Multi-agent framework — AI software company in natural language" } },
-    { "id": "213", "parentId": "210", "title": "UI-TARS Desktop", "url": "https://github.com/bytedance/UI-TARS-desktop", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "agents", "multimodal"], "description": "ByteDance's multimodal AI agent stack — desktop UI automation" } },
-    { "id": "214", "parentId": "210", "title": "Super Agent Party", "url": "https://github.com/heshengtao/super-agent-party", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "agents", "companion"], "description": "All-in-one AI companion — self-hosted neuro sama + openclaw" } },
-    { "id": "215", "parentId": "210", "title": "Alice (Voice Assistant)", "url": "https://github.com/pmbstyle/Alice", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "voice", "assistant"], "description": "Voice-first desktop AI assistant with memory and MCP support" } },
     {
       "id": "220",
-      "parentId": "200",
+      "parentId": "1",
       "title": "MCP Servers",
       "url": "",
       "isFolder": true,
-      "children": ["221", "222", "223", "224", "225"],
-      "metadata": { "icon": "Network", "favorite": false, "tags": ["ai", "mcp"], "description": "Model Context Protocol servers — extend AI capabilities" }
-    },
-    { "id": "221", "parentId": "220", "title": "MCP Marketplace", "url": "https://deepnlp.org/store/ai-agent/mcp-server#section_MCP%20SERVER", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "mcp", "marketplace"], "description": "MCP server marketplace — find and compare MCP servers" } },
-    { "id": "222", "parentId": "220", "title": "Social Media MCP", "url": "https://mcpservers.org/topics/social-media-mcp", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "mcp", "social-media"], "description": "Social media management MCP servers" } },
-    { "id": "223", "parentId": "220", "title": "MCP.so", "url": "https://mcp.so/", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "mcp"], "description": "MCP server directory — discover MCP tools" } },
-    { "id": "224", "parentId": "220", "title": "MCP Market", "url": "https://mcpmarket.com/categories/social-media-management", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "mcp", "marketplace"], "description": "MCP Market — social media management category" } },
-    { "id": "225", "parentId": "220", "title": "Awesome MCP Servers", "url": "https://github.com/appcypher/awesome-mcp-servers#databases", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "mcp", "awesome-list"], "description": "Curated list of Model Context Protocol servers" } },
-    {
-      "id": "226",
-      "parentId": "200",
-      "title": "a16z Infra",
-      "url": "https://github.com/a16z-infra",
-      "isFolder": false,
-      "children": [],
-      "metadata": { "tags": ["ai", "infra", "vc"], "description": "a16z infrastructure GitHub — AI infrastructure projects" }
+      "children": [
+        "1095",
+        "1117"
+      ],
+      "metadata": {
+        "icon": "Network",
+        "favorite": false,
+        "tags": [],
+        "description": "Model Context Protocol servers"
+      }
     },
     {
       "id": "230",
-      "parentId": "200",
+      "parentId": "1",
       "title": "Memory Frameworks",
       "url": "",
       "isFolder": true,
-      "children": ["231", "232", "233"],
-      "metadata": { "icon": "Brain", "favorite": false, "tags": ["ai", "memory"], "description": "AI memory systems — persistent memory for agents and companions" }
+      "children": [
+        "1060",
+        "1061",
+        "1062"
+      ],
+      "metadata": {
+        "icon": "Brain",
+        "favorite": false,
+        "tags": [],
+        "description": "Persistent memory for AI agents"
+      }
     },
-    { "id": "231", "parentId": "230", "title": "MemOS", "url": "https://github.com/MemTensor/MemOS", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "memory", "agents"], "description": "Self-evolving memory OS for LLM and AI agents — persistent memory, hybrid retrieval" } },
-    { "id": "232", "parentId": "230", "title": "Memu", "url": "https://github.com/ken2190/memu", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "memory", "companion"], "description": "Open-source memory framework for AI companions — high accuracy, fast retrieval" } },
-    { "id": "233", "parentId": "230", "title": "Agent Memory", "url": "https://github.com/xiaona-ai/agent-memory", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "memory", "lightweight"], "description": "Lightweight file-based memory system for AI agents" } },
-
     {
       "id": "300",
       "parentId": "1",
       "title": "Claude Code & Skills",
       "url": "",
       "isFolder": true,
-      "children": ["301", "302", "303", "304", "305", "306", "307", "308"],
-      "metadata": { "icon": "Terminal", "favorite": true, "tags": ["claude", "coding", "skills"], "description": "Claude Code best practices, plugins, skills, and extensions" }
+      "children": [
+        "1028",
+        "1029",
+        "1030",
+        "1031",
+        "1032",
+        "1033",
+        "1034",
+        "1035",
+        "1036",
+        "1141"
+      ],
+      "metadata": {
+        "icon": "Terminal",
+        "favorite": true,
+        "tags": [],
+        "description": "Claude Code best practices, plugins, and skills"
+      }
     },
-    { "id": "301", "parentId": "300", "title": "Claude Code Best Practice", "url": "https://github.com/shanraisshan/claude-code-best-practice", "isFolder": false, "children": [], "metadata": { "tags": ["claude", "best-practice", "coding"], "description": "From vibe coding to agentic engineering — Claude Code best practices" } },
-    { "id": "302", "parentId": "300", "title": "Claude-Mem (Memory Plugin)", "url": "https://github.com/thedotmack/claude-mem", "isFolder": false, "children": [], "metadata": { "tags": ["claude", "memory", "plugin"], "description": "Auto-capture and compress Claude's actions, inject context into future sessions" } },
-    { "id": "303", "parentId": "300", "title": "Free Claude Code", "url": "https://github.com/Rishurajgautam24/free-claude-code", "isFolder": false, "children": [], "metadata": { "tags": ["claude", "free"], "description": "Use Claude Code for free in terminal, VSCode, or Discord" } },
-    { "id": "304", "parentId": "300", "title": "Everything Claude Code", "url": "https://github.com/affaan-m/everything-claude-code", "isFolder": false, "children": [], "metadata": { "tags": ["claude", "skills", "optimization"], "description": "Agent harness performance optimization — skills, memory, security for Claude Code" } },
-    { "id": "305", "parentId": "300", "title": "Superpowers Framework", "url": "https://github.com/obra/superpowers", "isFolder": false, "children": [], "metadata": { "tags": ["claude", "skills", "framework"], "description": "Agentic skills framework and software development methodology" } },
-    { "id": "306", "parentId": "300", "title": "Awesome Claude Code", "url": "https://github.com/hesreallyhim/awesome-claude-code", "isFolder": false, "children": [], "metadata": { "tags": ["claude", "awesome-list"], "description": "Curated list of skills, hooks, slash-commands, and plugins for Claude Code" } },
-    { "id": "307", "parentId": "300", "title": "UI/UX Pro Max Skill", "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill", "isFolder": false, "children": [], "metadata": { "tags": ["claude", "ui-ux", "skill"], "description": "AI skill for design intelligence — build professional UI/UX across platforms" } },
-    { "id": "308", "parentId": "300", "title": "Code Review Graph", "url": "https://github.com/tirth8205/code-review-graph", "isFolder": false, "children": [], "metadata": { "tags": ["claude", "code-review", "knowledge-graph"], "description": "Local knowledge graph for Claude Code — 6.8x fewer tokens on reviews" } },
-
     {
       "id": "400",
       "parentId": "1",
       "title": "Content Creation",
       "url": "",
       "isFolder": true,
-      "children": ["410", "420", "430"],
-      "metadata": { "icon": "Palette", "favorite": true, "tags": ["content", "creative"], "description": "Content creation projects — quotes, standup comedy, English learning" }
+      "children": [],
+      "metadata": {
+        "icon": "Palette",
+        "favorite": true,
+        "tags": [],
+        "description": "Quote content, standup comedy, English learning"
+      }
     },
     {
       "id": "410",
-      "parentId": "400",
+      "parentId": "1",
       "title": "Quote Content",
       "url": "",
       "isFolder": true,
-      "children": ["411", "412", "413"],
-      "metadata": { "icon": "MessageSquare", "favorite": false, "tags": ["content", "quotes"], "description": "Quote image and video creation prompts" }
+      "children": [
+        "1163",
+        "1164",
+        "1165"
+      ],
+      "metadata": {
+        "icon": "MessageSquare",
+        "favorite": false,
+        "tags": [],
+        "description": "Quote image and video creation"
+      }
     },
-    { "id": "411", "parentId": "410", "title": "Image Prompt Creator", "url": "https://chatgpt.com/c/6a68fcb8-c084-83ee-be0a-5daa5436306b", "isFolder": false, "children": [], "metadata": { "tags": ["content", "image", "prompt"], "description": "ChatGPT conversation for creating quote image prompts" } },
-    { "id": "412", "parentId": "410", "title": "Meta AI Quote Prompt", "url": "https://meta.ai/prompt/66fef487-8b00-40ca-8802-c6c4fb5c76c0", "isFolder": false, "children": [], "metadata": { "tags": ["content", "quotes", "meta-ai"], "description": "Meta AI prompt for quote content generation" } },
-    { "id": "413", "parentId": "410", "title": "Current Affairs Search", "url": "https://www.youtube.com/results?search_query=may+current+affairs+2026&sp=mAEB", "isFolder": false, "children": [], "metadata": { "tags": ["content", "current-affairs", "youtube"], "description": "YouTube search for May 2026 current affairs" } },
     {
       "id": "420",
-      "parentId": "400",
+      "parentId": "1",
       "title": "Standup Comedy",
       "url": "",
       "isFolder": true,
-      "children": ["421", "422", "423"],
-      "metadata": { "icon": "Mic", "favorite": false, "tags": ["content", "comedy"], "description": "Standup comedy content creation tools" }
+      "children": [
+        "1166",
+        "1167",
+        "1168"
+      ],
+      "metadata": {
+        "icon": "Mic",
+        "favorite": false,
+        "tags": [],
+        "description": "Standup comedy content creation tools"
+      }
     },
-    { "id": "421", "parentId": "420", "title": "Topic Generator", "url": "https://aistudio.google.com/prompts/1CVPWfiWRcrg2GDn595RAyIEU92J7Dqdg", "isFolder": false, "children": [], "metadata": { "tags": ["comedy", "topics", "ai-studio"], "description": "AI Studio prompt for generating standup comedy topics" } },
-    { "id": "422", "parentId": "420", "title": "Script Generator", "url": "https://aistudio.google.com/prompts/1YE-rFzWDlyYJsfDzp9bawUMl5OviKbKz", "isFolder": false, "children": [], "metadata": { "tags": ["comedy", "script", "ai-studio"], "description": "AI Studio prompt for generating comedy scripts" } },
-    { "id": "423", "parentId": "420", "title": "Prompter (Claude)", "url": "https://claude.ai/chat/131cb99b-487e-4c67-b5f2-96ef28f3e768", "isFolder": false, "children": [], "metadata": { "tags": ["comedy", "prompt", "claude"], "description": "Claude conversation for comedy content prompting" } },
     {
       "id": "430",
-      "parentId": "400",
+      "parentId": "1",
       "title": "English Learning",
       "url": "",
       "isFolder": true,
-      "children": ["431", "432", "433", "434", "435", "436", "437", "438", "439", "440", "441"],
-      "metadata": { "icon": "BookOpen", "favorite": true, "tags": ["english", "learning", "ssc"], "description": "English grammar, vocabulary, and SSC exam English preparation" }
+      "children": [
+        "1172",
+        "1174",
+        "1175",
+        "1176",
+        "1177",
+        "1182",
+        "1183",
+        "1185",
+        "1186",
+        "1187"
+      ],
+      "metadata": {
+        "icon": "BookOpen",
+        "favorite": true,
+        "tags": [],
+        "description": "English grammar, vocabulary, SSC English"
+      }
     },
     {
       "id": "431",
-      "parentId": "430",
+      "parentId": "1",
       "title": "Reading Comprehension",
       "url": "",
       "isFolder": true,
-      "children": ["432", "433", "434"],
-      "metadata": { "icon": "BookOpen", "favorite": false, "tags": ["english", "rc"], "description": "RC practice — prompts and generators" }
+      "children": [
+        "1170",
+        "1171",
+        "1180"
+      ],
+      "metadata": {
+        "icon": "BookOpen",
+        "favorite": false,
+        "tags": [],
+        "description": "RC practice prompts and generators"
+      }
     },
-    { "id": "432", "parentId": "431", "title": "Gemini RC Prompter", "url": "https://gemini.google.com/app/f59a298e18a6c831?hl=en-IN", "isFolder": false, "children": [], "metadata": { "tags": ["english", "rc", "gemini"], "description": "Gemini prompt for reading comprehension generation" } },
-    { "id": "433", "parentId": "431", "title": "Google Studio RC Creator", "url": "https://aistudio.google.com/prompts/1AyZuCOH_iqNkcOTRuJyFN5UkwolouvRS", "isFolder": false, "children": [], "metadata": { "tags": ["english", "rc", "ai-studio"], "description": "AI Studio prompt for creating RC passages" } },
-    { "id": "434", "parentId": "431", "title": "RC Generator (Gemini)", "url": "https://gemini.google.com/app/a9d6a40b15787893?hl=en-IN", "isFolder": false, "children": [], "metadata": { "tags": ["english", "rc", "gemini"], "description": "Gemini-based RC passage generator" } },
-    { "id": "435", "parentId": "430", "title": "Questions Organizer", "url": "https://aistudio.google.com/prompts/1O-6UR1kCSe3CycNLdHM9eblu67ai5V0k", "isFolder": false, "children": [], "metadata": { "tags": ["english", "questions", "ai-studio"], "description": "AI Studio prompt for organizing and generating English questions" } },
-    { "id": "436", "parentId": "430", "title": "PQRS Generator", "url": "https://gemini.google.com/app/090eae5d84293cb5?hl=en-IN", "isFolder": false, "children": [], "metadata": { "tags": ["english", "pqrs", "gemini"], "description": "Gemini prompt for PQRS (sentence arrangement) questions" } },
-    { "id": "437", "parentId": "430", "title": "Cloze Test Generator", "url": "https://gemini.google.com/app/fc1202882a33821d?hl=en-IN", "isFolder": false, "children": [], "metadata": { "tags": ["english", "cloze", "gemini"], "description": "Gemini prompt for cloze test generation" } },
-    { "id": "438", "parentId": "430", "title": "AV PV Generator", "url": "https://gemini.google.com/app/23dff78af47d4c4d?hl=en-IN", "isFolder": false, "children": [], "metadata": { "tags": ["english", "av-pv", "gemini"], "description": "Gemini prompt for active/passive voice exercises" } },
-    { "id": "439", "parentId": "430", "title": "Sentence Improvement", "url": "https://gemini.google.com/app/13c467e48868e3a1?hl=en-IN", "isFolder": false, "children": [], "metadata": { "tags": ["english", "grammar", "gemini"], "description": "Gemini prompt for sentence improvement exercises", "favorite": true } },
-    { "id": "440", "parentId": "430", "title": "Narration Generator", "url": "https://gemini.google.com/app/83579de886b52290?hl=en-IN", "isFolder": false, "children": [], "metadata": { "tags": ["english", "narration", "gemini"], "description": "Gemini prompt for direct/indirect narration exercises" } },
-    { "id": "441", "parentId": "430", "title": "Synonym-Antonym Tools", "url": "", "isFolder": true, "children": ["442", "443", "444"], "metadata": { "icon": "Tag", "favorite": false, "tags": ["english", "vocabulary"], "description": "Synonym and antonym question creation tools" } },
-    { "id": "442", "parentId": "441", "title": "Raw to JSON (Claude)", "url": "https://claude.ai/chat/51dc1209-2ff4-4349-a6c1-ba2c9ff2dfae", "isFolder": false, "children": [], "metadata": { "tags": ["english", "vocabulary", "claude"], "description": "Claude conversation for converting raw vocab to JSON" } },
-    { "id": "443", "parentId": "441", "title": "Complete the JSON", "url": "https://aistudio.google.com/prompts/1aJV8L08VAB7IjQcSGilhaMkl-NlijsQ8", "isFolder": false, "children": [], "metadata": { "tags": ["english", "vocabulary", "ai-studio"], "description": "AI Studio prompt for completing vocabulary JSON data" } },
-    { "id": "444", "parentId": "441", "title": "Validate JSON", "url": "https://gemini.google.com/app/5724b3a8a3862d2f?hl=en-IN", "isFolder": false, "children": [], "metadata": { "tags": ["english", "vocabulary", "gemini"], "description": "Gemini prompt for validating vocabulary JSON" } },
-
+    {
+      "id": "441",
+      "parentId": "1",
+      "title": "Synonym-Antonym Tools",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1169",
+        "1173",
+        "1178",
+        "1179",
+        "1181"
+      ],
+      "metadata": {
+        "icon": "Tag",
+        "favorite": false,
+        "tags": [],
+        "description": "Vocabulary question creation tools"
+      }
+    },
     {
       "id": "500",
       "parentId": "1",
       "title": "Study & Exams",
       "url": "",
       "isFolder": true,
-      "children": ["501", "510", "520", "530", "540"],
-      "metadata": { "icon": "GraduationCap", "favorite": false, "tags": ["study", "exams", "ssc"], "description": "SSC exam preparation, mock tests, and study materials" }
+      "children": [
+        "1072",
+        "1078",
+        "1081",
+        "1084",
+        "1184"
+      ],
+      "metadata": {
+        "icon": "GraduationCap",
+        "favorite": false,
+        "tags": [],
+        "description": "SSC exam prep, mock tests, study materials"
+      }
     },
-    { "id": "501", "parentId": "500", "title": "Mock Tests", "url": "", "isFolder": true, "children": ["502", "503"], "metadata": { "icon": "CheckCircle", "favorite": false, "tags": ["mock", "test"], "description": "Online mock test platforms" } },
-    { "id": "502", "parentId": "501", "title": "Reasoning Booster", "url": "https://www.testranking.in/free-test/reasoning-booster/964/9", "isFolder": false, "children": [], "metadata": { "tags": ["mock", "reasoning"], "description": "Free reasoning practice tests" } },
-    { "id": "503", "parentId": "501", "title": "Rojgar With Ankit Tests", "url": "https://rojgarwithankit.co.in/test-series/408/tests?subjectId=-1", "isFolder": false, "children": [], "metadata": { "tags": ["mock", "ssc", "rojgar"], "description": "SSC test series by Rojgar With Ankit" } },
-    { "id": "510", "parentId": "500", "title": "Maths", "url": "", "isFolder": true, "children": ["511", "512"], "metadata": { "icon": "Book", "favorite": false, "tags": ["maths", "number-system"], "description": "Maths number system and group theory resources" } },
-    { "id": "511", "parentId": "510", "title": "Number System Lectures", "url": "https://aistudio.google.com/prompts/19pAXtnFCW4wdsx2KLNJZLvm8T-LkAHTv", "isFolder": false, "children": [], "metadata": { "tags": ["maths", "number-system"], "description": "AI Studio notes on number system lectures" } },
-    { "id": "512", "parentId": "510", "title": "Group Theory Playlist", "url": "https://www.youtube.com/playlist?list=PLU6SqdYcYsfKaQARA0_vnhuXbxmuOQVFF", "isFolder": false, "children": [], "metadata": { "tags": ["maths", "group-theory", "youtube"], "description": "YouTube playlist on group theory" } },
-    { "id": "520", "parentId": "500", "title": "Geography & Polity", "url": "", "isFolder": true, "children": ["521", "522"], "metadata": { "icon": "Map", "favorite": false, "tags": ["geography", "polity"], "description": "Geography and polity study materials" } },
-    { "id": "521", "parentId": "520", "title": "Geography Notes", "url": "https://aistudio.google.com/prompts/1bUpsdB-w7dzuH_4XX6D1a2SQKC5e0pBk", "isFolder": false, "children": [], "metadata": { "tags": ["geography", "notes"], "description": "AI Studio geography study notes" } },
-    { "id": "522", "parentId": "520", "title": "Polity Notes", "url": "https://aistudio.google.com/prompts/16MeFTU-6ymnizJo66OKsfOo78uOnmzch", "isFolder": false, "children": [], "metadata": { "tags": ["polity", "notes"], "description": "AI Studio polity study notes" } },
-    { "id": "530", "parentId": "500", "title": "Rajasthan CET", "url": "https://www.adda247.com/exams/rajasthan/rajasthan-cet-syllabus/", "isFolder": false, "children": [], "metadata": { "tags": ["rajasthan", "cet", "syllabus"], "description": "Rajasthan CET syllabus and exam pattern 2026" } },
-    { "id": "540", "parentId": "500", "title": "YouTube Playlists", "url": "", "isFolder": true, "children": ["541", "542"], "metadata": { "icon": "Youtube", "favorite": false, "tags": ["youtube", "playlists"], "description": "Educational YouTube playlists" } },
-    { "id": "541", "parentId": "540", "title": "SSC Wallah Foundation", "url": "https://youtube.com/playlist?list=PL22tVRPdgORH5s9Uik8VnPrNf_ZrWB7vJ&si=A8MyK5pJZ0Ocogsp", "isFolder": false, "children": [], "metadata": { "tags": ["ssc", "foundation", "youtube"], "description": "SSC Foundation 2026 playlist by SSC Wallah" } },
-    { "id": "542", "parentId": "540", "title": "English by Ananya (SSC)", "url": "https://www.youtube.com/playlist?list=PL7XTtdz5e9kM36Lb3Cs8JcNk4-fFUQFaD", "isFolder": false, "children": [], "metadata": { "tags": ["english", "ssc", "youtube"], "description": "English lectures for SSC 2026 by Ananya Ma'am" } },
-
+    {
+      "id": "501",
+      "parentId": "1",
+      "title": "Mock Tests",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1070",
+        "1071"
+      ],
+      "metadata": {
+        "icon": "CheckCircle",
+        "favorite": false,
+        "tags": [],
+        "description": "Online mock test platforms"
+      }
+    },
+    {
+      "id": "510",
+      "parentId": "1",
+      "title": "Maths",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1073",
+        "1074",
+        "1076",
+        "1077"
+      ],
+      "metadata": {
+        "icon": "Book",
+        "favorite": false,
+        "tags": [],
+        "description": "Number system and group theory"
+      }
+    },
+    {
+      "id": "520",
+      "parentId": "1",
+      "title": "Geography & Polity",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1079",
+        "1082",
+        "1083"
+      ],
+      "metadata": {
+        "icon": "Map",
+        "favorite": false,
+        "tags": [],
+        "description": "Geography and polity study materials"
+      }
+    },
+    {
+      "id": "540",
+      "parentId": "1",
+      "title": "YouTube Playlists",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1043",
+        "1044",
+        "1075"
+      ],
+      "metadata": {
+        "icon": "Music",
+        "favorite": false,
+        "tags": [],
+        "description": "Educational YouTube playlists"
+      }
+    },
+    {
+      "id": "550",
+      "parentId": "1",
+      "title": "AI Study Prompts",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1063",
+        "1064",
+        "1066",
+        "1067",
+        "1080",
+        "1086"
+      ],
+      "metadata": {
+        "icon": "Wand2",
+        "favorite": false,
+        "tags": [],
+        "description": "AI prompts for study and exam preparation"
+      }
+    },
     {
       "id": "600",
       "parentId": "1",
       "title": "GitHub Repos",
       "url": "",
       "isFolder": true,
-      "children": ["610", "620", "630"],
-      "metadata": { "icon": "GitBranch", "favorite": false, "tags": ["github", "repos"], "description": "GitHub repositories organized by priority" }
+      "children": [],
+      "metadata": {
+        "icon": "GitBranch",
+        "favorite": false,
+        "tags": [],
+        "description": "GitHub repositories organized by priority"
+      }
     },
     {
       "id": "610",
-      "parentId": "600",
+      "parentId": "1",
       "title": "High Priority",
       "url": "",
       "isFolder": true,
-      "children": ["611", "612", "613", "614", "615", "616", "617", "618", "619", "620"],
-      "metadata": { "icon": "Star", "favorite": false, "tags": ["github", "high-priority"], "description": "Top GitHub repos to check out — AI, tools, and interesting projects" }
+      "children": [],
+      "metadata": {
+        "icon": "Star",
+        "favorite": false,
+        "tags": [],
+        "description": "Top repos to check out"
+      }
     },
-    { "id": "611", "parentId": "610", "title": "Cherry Studio", "url": "https://github.com/CherryHQ/cherry-studio", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "productivity", "desktop"], "description": "AI productivity studio — smart chat, autonomous agents, 300+ assistants" } },
-    { "id": "612", "parentId": "610", "title": "Agent Reach", "url": "https://github.com/Panniantong/Agent-Reach", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "agents", "web-scraping"], "description": "Give your AI agent eyes — read Twitter, Reddit, YouTube, GitHub" } },
-    { "id": "613", "parentId": "610", "title": "Airi (AI Companion)", "url": "https://github.com/moeru-ai/airi", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "companion", "voice"], "description": "Self-hosted AI companion — realtime voice chat, Minecraft, Factorio" } },
-    { "id": "614", "parentId": "610", "title": "AdGuard Home", "url": "https://github.com/AdguardTeam/AdGuardHome", "isFolder": false, "children": [], "metadata": { "tags": ["dns", "privacy", "network"], "description": "Network-wide ad and tracker blocking DNS server" } },
-    { "id": "615", "parentId": "610", "title": "Detectron2", "url": "https://github.com/facebookresearch/detectron2", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "computer-vision", "detection"], "description": "Facebook's object detection and segmentation platform" } },
-    { "id": "616", "parentId": "610", "title": "OpenPose", "url": "https://github.com/CMU-Perceptual-Computing-Lab/openpose", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "pose-estimation", "cv"], "description": "Real-time multi-person keypoint detection — body, face, hands" } },
-    { "id": "617", "parentId": "610", "title": "Frigate NVR", "url": "https://github.com/blakeblackshear/frigate", "isFolder": false, "children": [], "metadata": { "tags": ["security", "nvr", "ai"], "description": "NVR with realtime local object detection for IP cameras" } },
-    { "id": "618", "parentId": "610", "title": "500 AI Agent Projects", "url": "https://github.com/ashishpatel26/500-AI-Agents-Projects", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "agents", "projects"], "description": "Curated collection of 500 AI agent use cases across industries" } },
-    { "id": "619", "parentId": "610", "title": "SearXNG", "url": "https://github.com/searxng/searxng", "isFolder": false, "children": [], "metadata": { "tags": ["search", "privacy", "self-hosted"], "description": "Free internet metasearch engine — no tracking or profiling" } },
-    { "id": "620", "parentId": "610", "title": "DeepFaceLive", "url": "https://github.com/iperov/DeepFaceLive", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "face-swap", "streaming"], "description": "Real-time face swap for PC streaming or video calls" } },
     {
       "id": "620",
-      "parentId": "600",
+      "parentId": "1",
       "title": "Interesting (Check Later)",
       "url": "",
       "isFolder": true,
-      "children": ["621", "622", "623", "624", "625", "626", "627", "628", "629"],
-      "metadata": { "icon": "Bookmark", "favorite": false, "tags": ["github", "interesting"], "description": "Interesting repos to explore when you have time" }
+      "children": [
+        "1092",
+        "1098",
+        "1101",
+        "1115"
+      ],
+      "metadata": {
+        "icon": "Bookmark",
+        "favorite": false,
+        "tags": [],
+        "description": "Interesting repos to explore"
+      }
     },
-    { "id": "621", "parentId": "620", "title": "CompressO", "url": "https://github.com/codeforreal1/compressO", "isFolder": false, "children": [], "metadata": { "tags": ["tool", "compression", "video"], "description": "Convert any video/image into tiny size — free and open-source" } },
-    { "id": "622", "parentId": "620", "title": "Roboflow Supervision", "url": "https://github.com/roboflow/supervision", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "computer-vision", "toolkit"], "description": "Reusable computer vision tools" } },
-    { "id": "623", "parentId": "620", "title": "OLMOCR", "url": "https://github.com/allenai/olmocr", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "pdf", "ocr"], "description": "Toolkit for linearizing PDFs for LLM datasets/training" } },
-    { "id": "624", "parentId": "620", "title": "FluidVoice", "url": "https://github.com/altic-dev/FluidVoice", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "voice", "dictation"], "description": "Fastest macOS dictation app with on-device STT — local Wispr Flow alternative" } },
-    { "id": "625", "parentId": "620", "title": "MoneyPrinterTurbo", "url": "https://github.com/harry0703/MoneyPrinterTurbo", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "video", "automation"], "description": "Generate HD short videos with one click using AI LLM" } },
-    { "id": "626", "parentId": "620", "title": "Deep-Live-Cam", "url": "https://github.com/hacksider/Deep-Live-Cam", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "face-swap", "realtime"], "description": "Real-time face swap and one-click video deepfake" } },
-    { "id": "627", "parentId": "620", "title": "Sherlock", "url": "https://github.com/sherlock-project/sherlock", "isFolder": false, "children": [], "metadata": { "tags": ["osint", "social-media"], "description": "Hunt down social media accounts by username across networks" } },
-    { "id": "628", "parentId": "620", "title": "Anime.js", "url": "https://github.com/juliangarnier/anime", "isFolder": false, "children": [], "metadata": { "tags": ["animation", "javascript"], "description": "JavaScript animation engine" } },
-    { "id": "629", "parentId": "620", "title": "OpenBB Finance", "url": "https://github.com/OpenBB-finance/OpenBB", "isFolder": false, "children": [], "metadata": { "tags": ["finance", "data", "ai"], "description": "Financial data platform for analysts, quants and AI agents" } },
     {
       "id": "630",
-      "parentId": "600",
+      "parentId": "1",
       "title": "Useful Tools",
       "url": "",
       "isFolder": true,
-      "children": ["631", "632", "633", "634", "635", "636"],
-      "metadata": { "icon": "Wrench", "favorite": false, "tags": ["github", "tools"], "description": "Practical tools and utilities" }
+      "children": [
+        "1195",
+        "1196"
+      ],
+      "metadata": {
+        "icon": "Wrench",
+        "favorite": false,
+        "tags": [],
+        "description": "Practical tools and utilities"
+      }
     },
-    { "id": "631", "parentId": "630", "title": "Dify", "url": "https://github.com/langgenius/dify", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "workflow", "platform"], "description": "Production-ready platform for agentic workflow development" } },
-    { "id": "632", "parentId": "630", "title": "scrcpy", "url": "https://github.com/Genymobile/scrcpy", "isFolder": false, "children": [], "metadata": { "tags": ["android", "screen-mirror"], "description": "Display and control your Android device" } },
-    { "id": "633", "parentId": "630", "title": "ComfyUI", "url": "https://github.com/Comfy-Org/ComfyUI", "isFolder": false, "children": [], "metadata": { "tags": ["ai", "image-gen", "gui"], "description": "Most powerful modular diffusion model GUI and backend" } },
-    { "id": "634", "parentId": "630", "title": "Ladybird Browser", "url": "https://github.com/LadybirdBrowser/ladybird", "isFolder": false, "children": [], "metadata": { "tags": ["browser", "independent"], "description": "Truly independent web browser" } },
-    { "id": "635", "parentId": "630", "title": "OpenCut", "url": "https://github.com/OpenCut-app/OpenCut", "isFolder": false, "children": [], "metadata": { "tags": ["video-editor", "open-source"], "description": "The open-source CapCut alternative" } },
-    { "id": "636", "parentId": "630", "title": "ntfy", "url": "https://github.com/binwiederhier/ntfy", "isFolder": false, "children": [], "metadata": { "tags": ["notifications", "self-hosted"], "description": "Send push notifications to your phone or desktop using PUT/POST" } },
-
+    {
+      "id": "640",
+      "parentId": "1",
+      "title": "Web Frameworks & CMS",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1107",
+        "1127",
+        "1128",
+        "1130",
+        "1134",
+        "1138",
+        "1145"
+      ],
+      "metadata": {
+        "icon": "Code",
+        "favorite": false,
+        "tags": [],
+        "description": "Web frameworks, CMS, and frontend tools"
+      }
+    },
+    {
+      "id": "641",
+      "parentId": "1",
+      "title": "DevOps & Infrastructure",
+      "url": "",
+      "isFolder": true,
+      "children": [],
+      "metadata": {
+        "icon": "Server",
+        "favorite": false,
+        "tags": [],
+        "description": "DevOps tools, self-hosted services, infrastructure"
+      }
+    },
+    {
+      "id": "642",
+      "parentId": "1",
+      "title": "AI Video & Image",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1087",
+        "1088",
+        "1089",
+        "1093",
+        "1103",
+        "1104",
+        "1105",
+        "1118",
+        "1125",
+        "1142",
+        "1147",
+        "1148",
+        "1155",
+        "1157",
+        "1162",
+        "1198",
+        "1199",
+        "1200",
+        "1201",
+        "1202",
+        "1203"
+      ],
+      "metadata": {
+        "icon": "Video",
+        "favorite": false,
+        "tags": [],
+        "description": "AI video generation, image processing, face tools"
+      }
+    },
+    {
+      "id": "643",
+      "parentId": "1",
+      "title": "AI Voice & Audio",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1091",
+        "1096",
+        "1126",
+        "1149",
+        "1152"
+      ],
+      "metadata": {
+        "icon": "Mic",
+        "favorite": false,
+        "tags": [],
+        "description": "Text-to-speech, voice cloning, audio tools"
+      }
+    },
+    {
+      "id": "644",
+      "parentId": "1",
+      "title": "Finance & Data",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1108",
+        "1116"
+      ],
+      "metadata": {
+        "icon": "DollarSign",
+        "favorite": false,
+        "tags": [],
+        "description": "Financial tools, data analysis, stock tracking"
+      }
+    },
+    {
+      "id": "645",
+      "parentId": "1",
+      "title": "Security & Privacy",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1114",
+        "1124",
+        "1135",
+        "1144",
+        "1146",
+        "1154",
+        "1158",
+        "1160"
+      ],
+      "metadata": {
+        "icon": "Shield",
+        "favorite": false,
+        "tags": [],
+        "description": "Security tools, DNS, privacy"
+      }
+    },
+    {
+      "id": "646",
+      "parentId": "1",
+      "title": "Productivity",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1121",
+        "1123",
+        "1129",
+        "1133",
+        "1137",
+        "1150"
+      ],
+      "metadata": {
+        "icon": "Briefcase",
+        "favorite": false,
+        "tags": [],
+        "description": "Productivity tools, note-taking, project management"
+      }
+    },
+    {
+      "id": "647",
+      "parentId": "1",
+      "title": "Miscellaneous",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1000",
+        "1001",
+        "1002",
+        "1003",
+        "1004",
+        "1005",
+        "1006",
+        "1007",
+        "1008",
+        "1009",
+        "1010",
+        "1011",
+        "1012",
+        "1013",
+        "1014",
+        "1015",
+        "1016",
+        "1017",
+        "1018",
+        "1019",
+        "1020",
+        "1021",
+        "1022",
+        "1023",
+        "1024",
+        "1025",
+        "1026",
+        "1027",
+        "1068",
+        "1085",
+        "1090",
+        "1097",
+        "1099",
+        "1106",
+        "1110",
+        "1111",
+        "1112",
+        "1113",
+        "1119",
+        "1120",
+        "1122",
+        "1131",
+        "1132",
+        "1136",
+        "1139",
+        "1153",
+        "1156",
+        "1161"
+      ],
+      "metadata": {
+        "icon": "Folder",
+        "favorite": false,
+        "tags": [],
+        "description": "Other interesting repos and tools"
+      }
+    },
     {
       "id": "700",
       "parentId": "1",
       "title": "Google Services",
       "url": "",
       "isFolder": true,
-      "children": ["701", "702", "703", "704"],
-      "metadata": { "icon": "Cloud", "favorite": false, "tags": ["google", "services"], "description": "Google Workspace and services" }
+      "children": [
+        "1037",
+        "1038",
+        "1039",
+        "1040",
+        "1041",
+        "1042"
+      ],
+      "metadata": {
+        "icon": "Cloud",
+        "favorite": false,
+        "tags": [],
+        "description": "Google Workspace and services"
+      }
     },
-    { "id": "701", "parentId": "700", "title": "Google Drive", "url": "https://drive.google.com/drive/?lfhs=2", "isFolder": false, "children": [], "metadata": { "tags": ["google", "storage", "cloud"], "description": "Google Drive — cloud storage and file management" } },
-    { "id": "702", "parentId": "700", "title": "Google Sheets", "url": "https://docs.google.com/spreadsheets/u/0/", "isFolder": false, "children": [], "metadata": { "tags": ["google", "spreadsheet"], "description": "Google Sheets — online spreadsheet tool" } },
-    { "id": "703", "parentId": "700", "title": "Stitch (Design with AI)", "url": "https://stitch.withgoogle.com/", "isFolder": false, "children": [], "metadata": { "tags": ["google", "design", "ai"], "description": "Google Stitch — AI-powered design tool" } },
-    { "id": "704", "parentId": "700", "title": "NotebookLM", "url": "https://notebooklm.google.com/", "isFolder": false, "children": [], "metadata": { "tags": ["google", "notes", "ai"], "description": "Google NotebookLM — AI-powered research notebook" } },
-
     {
       "id": "800",
       "parentId": "1",
       "title": "Cloud & API Providers",
       "url": "",
       "isFolder": true,
-      "children": ["801", "802", "803", "804"],
-      "metadata": { "icon": "Server", "favorite": false, "tags": ["cloud", "api", "compute"], "description": "Cloud computing and AI API providers" }
+      "children": [
+        "1056",
+        "1057",
+        "1065",
+        "1069",
+        "1191",
+        "1192",
+        "1193",
+        "1194"
+      ],
+      "metadata": {
+        "icon": "Server",
+        "favorite": false,
+        "tags": [],
+        "description": "Cloud computing and AI API providers"
+      }
     },
-    { "id": "801", "parentId": "800", "title": "Google Colab", "url": "https://colab.research.google.com/", "isFolder": false, "children": [], "metadata": { "tags": ["cloud", "gpu", "python"], "description": "Free Jupyter notebooks with GPU — run ML code in the cloud" } },
-    { "id": "802", "parentId": "800", "title": "Alibaba Cloud (Free)", "url": "https://www.alibabacloud.com/en/free?_p_lc=1", "isFolder": false, "children": [], "metadata": { "tags": ["cloud", "free", "alibaba"], "description": "Alibaba Cloud free tier — start for free" } },
-    { "id": "803", "parentId": "800", "title": "Opencode", "url": "https://opencode.ai/workspace/wrk_01KWDPZECBSKBEKAQNAYHDFA3G/members", "isFolder": false, "children": [], "metadata": { "tags": ["api", "coding", "ai"], "description": "Opencode workspace — AI coding assistant API" } },
-    { "id": "804", "parentId": "800", "title": "AI Models API", "url": "", "isFolder": true, "children": ["805", "806", "807", "808"], "metadata": { "icon": "Key", "favorite": false, "tags": ["api", "keys"], "description": "AI model API consoles and documentation" } },
-    { "id": "805", "parentId": "804", "title": "Opencode Zen", "url": "https://opencode.ai/docs/zen/", "isFolder": false, "children": [], "metadata": { "tags": ["api", "opencode"], "description": "Opencode Zen documentation" } },
-    { "id": "806", "parentId": "804", "title": "Cerebras", "url": "https://cloud.cerebras.ai/", "isFolder": false, "children": [], "metadata": { "tags": ["api", "inference", "fast"], "description": "Cerebras — ultra-fast AI inference" } },
-    { "id": "807", "parentId": "804", "title": "Nvidia Build", "url": "https://build.nvidia.com/settings/api-keys", "isFolder": false, "children": [], "metadata": { "tags": ["api", "gpu", "nvidia"], "description": "Nvidia Build — API keys for GPU-accelerated AI" } },
-    { "id": "808", "parentId": "804", "title": "Groq", "url": "https://console.groq.com/docs/rate-limits", "isFolder": false, "children": [], "metadata": { "tags": ["api", "inference", "fast"], "description": "Groq — fast AI inference with rate limit docs" } },
-
+    {
+      "id": "804",
+      "parentId": "1",
+      "title": "AI Models API",
+      "url": "",
+      "isFolder": true,
+      "children": [],
+      "metadata": {
+        "icon": "Key",
+        "favorite": false,
+        "tags": [],
+        "description": "AI model API consoles"
+      }
+    },
     {
       "id": "900",
       "parentId": "1",
       "title": "Apps & Products",
       "url": "",
       "isFolder": true,
-      "children": ["901", "902", "910"],
-      "metadata": { "icon": "Smartphone", "favorite": false, "tags": ["apps", "products"], "description": "Web apps, products to buy, and useful services" }
+      "children": [
+        "1188",
+        "1189"
+      ],
+      "metadata": {
+        "icon": "Smartphone",
+        "favorite": false,
+        "tags": [],
+        "description": "Web apps and products to buy"
+      }
     },
-    { "id": "901", "parentId": "900", "title": "FreeBuff", "url": "https://freebuff.com/account?tab=overview", "isFolder": false, "children": [], "metadata": { "tags": ["app", "free", "buff"], "description": "FreeBuff — free offers and deals app" } },
-    { "id": "902", "parentId": "900", "title": "Free Student Plans", "url": "https://gemini.google.com/app/3ba027ca2c1ea647?hl=en-IN", "isFolder": false, "children": [], "metadata": { "tags": ["free", "student", "ai"], "description": "Gemini conversation listing free plans for students" } },
-    { "id": "910", "parentId": "900", "title": "Products to Buy", "url": "", "isFolder": true, "children": ["911"], "metadata": { "icon": "ShoppingCart", "favorite": false, "tags": ["shopping", "hardware"], "description": "Products and hardware to purchase" } },
-    { "id": "911", "parentId": "910", "title": "AMD Ryzen AI Halo", "url": "https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo.html", "isFolder": false, "children": [], "metadata": { "tags": ["hardware", "amd", "ai-pc"], "description": "AMD Ryzen AI Halo processor — next-gen AI PC chip" } },
-
+    {
+      "id": "910",
+      "parentId": "1",
+      "title": "Products to Buy",
+      "url": "",
+      "isFolder": true,
+      "children": [
+        "1190"
+      ],
+      "metadata": {
+        "icon": "ShoppingCart",
+        "favorite": false,
+        "tags": [],
+        "description": "Hardware and products to purchase"
+      }
+    },
+    {
+      "id": "1000",
+      "parentId": "647",
+      "title": "VoxCPM Demo - a Hugging Face Space by openbmb",
+      "url": "https://huggingface.co/spaces/openbmb/VoxCPM-Demo",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "huggingface"
+        ],
+        "description": "Hugging Face model or demo"
+      }
+    },
+    {
+      "id": "1001",
+      "parentId": "647",
+      "title": "ByteDance-Seed/Tar-1.5B at main",
+      "url": "https://huggingface.co/ByteDance-Seed/Tar-1.5B/tree/main",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "huggingface"
+        ],
+        "description": "Hugging Face model or demo"
+      }
+    },
+    {
+      "id": "1002",
+      "parentId": "647",
+      "title": "microsoft/VibeVoice-Realtime-0.5B · Hugging Face",
+      "url": "https://huggingface.co/microsoft/VibeVoice-Realtime-0.5B",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "huggingface",
+          "voice"
+        ],
+        "description": "Hugging Face model or demo"
+      }
+    },
+    {
+      "id": "1003",
+      "parentId": "647",
+      "title": "microsoft/VibeVoice-1.5B · Hugging Face",
+      "url": "https://huggingface.co/microsoft/VibeVoice-1.5B",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "huggingface",
+          "voice"
+        ],
+        "description": "Hugging Face model or demo"
+      }
+    },
+    {
+      "id": "1004",
+      "parentId": "647",
+      "title": "black-forest-labs/FLUX.1-schnell · Hugging Face",
+      "url": "https://huggingface.co/black-forest-labs/FLUX.1-schnell",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "huggingface",
+          "downloader"
+        ],
+        "description": "Hugging Face model or demo"
+      }
+    },
+    {
+      "id": "1005",
+      "parentId": "647",
+      "title": "ai4bharat/IndicF5 at main",
+      "url": "https://huggingface.co/ai4bharat/IndicF5/tree/main",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "huggingface"
+        ],
+        "description": "Hugging Face model or demo"
+      }
+    },
+    {
+      "id": "1006",
+      "parentId": "647",
+      "title": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice · Hugging Face",
+      "url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "huggingface",
+          "voice"
+        ],
+        "description": "Hugging Face model or demo"
+      }
+    },
+    {
+      "id": "1007",
+      "parentId": "647",
+      "title": "Quickstart - ElizaOS Documentation",
+      "url": "https://docs.elizaos.ai/quickstart#database-connection-issues",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1008",
+      "parentId": "647",
+      "title": "GitHub - elizaOS/eliza: Autonomous agents for everyone · GitHub",
+      "url": "https://github.com/elizaOS/eliza",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1009",
+      "parentId": "647",
+      "title": "GitHub - bytedance/UI-TARS-desktop: The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra · GitHub",
+      "url": "https://github.com/bytedance/UI-TARS-desktop",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1010",
+      "parentId": "647",
+      "title": "GitHub - heshengtao/super-agent-party: ⭐ All-in-one AI companion! Super Agent Party = Self hosted neuro sama + openclaw! ⭐ 全能AI伴侣！超级智能体派对 = 自托管neuro sama + openclaw! · GitHub",
+      "url": "https://github.com/heshengtao/super-agent-party",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1011",
+      "parentId": "647",
+      "title": "GitHub - pmbstyle/Alice: Alice is a voice-first desktop AI assistant application built with Vue.js, Vite, and Electron. Advanced memory system, function calling, MCP support, optional fully local use, and more. · GitHub",
+      "url": "https://github.com/pmbstyle/Alice",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "voice",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1012",
+      "parentId": "647",
+      "title": "MCP Marketplace Store OneKey MCP Router Free and Open Discounted Access to Model Context Protocol Servers Moneytize MCP Server Reviews Ratings and Communities",
+      "url": "https://deepnlp.org/store/ai-agent/mcp-server#section_MCP%20SERVER",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1013",
+      "parentId": "647",
+      "title": "Social Media MCP Servers | Awesome MCP Servers",
+      "url": "https://mcpservers.org/topics/social-media-mcp",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1014",
+      "parentId": "647",
+      "title": "MCP Servers",
+      "url": "https://mcp.so/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1015",
+      "parentId": "647",
+      "title": "Social Media Management MCP Servers | MCP Market",
+      "url": "https://mcpmarket.com/categories/social-media-management",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1016",
+      "parentId": "647",
+      "title": "a16z-infra · GitHub",
+      "url": "https://github.com/a16z-infra",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1017",
+      "parentId": "647",
+      "title": "Welcome To Colab",
+      "url": "https://colab.research.google.com/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "colab"
+        ],
+        "description": "Google Colab notebook"
+      }
+    },
+    {
+      "id": "1018",
+      "parentId": "647",
+      "title": "watcher_telegram_downloader.ipynb",
+      "url": "https://colab.research.google.com/drive/13c-fRjghFSyLsmjVyg1P6rmCdyPl5PrV#scrollTo=SlgeZ82WbthT",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "colab",
+          "telegram"
+        ],
+        "description": "Google Colab notebook"
+      }
+    },
+    {
+      "id": "1019",
+      "parentId": "647",
+      "title": "meituan-longcat/LongCat-Video",
+      "url": "https://github.com/meituan-longcat/LongCat-Video",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "video",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1020",
+      "parentId": "647",
+      "title": "TencentCloud/TencentDB-Agent-Memory: TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conversations, docs, and code into four reusable memory assets (Chat Memory, Skill, LLM-Wiki, Code-Graph) that are governed, shared, and equipped across agents and frameworks.",
+      "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1021",
+      "parentId": "647",
+      "title": "Audio8/Audio8-TTS-Preview-0.6b · Hugging Face",
+      "url": "https://huggingface.co/Audio8/Audio8-TTS-Preview-0.6b",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "huggingface",
+          "voice"
+        ],
+        "description": "Hugging Face model or demo"
+      }
+    },
+    {
+      "id": "1022",
+      "parentId": "647",
+      "title": "Free Three.js 3D Assets and GLB Models | Crayon",
+      "url": "https://app.usecrayon.ai/assetlibrary",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1023",
+      "parentId": "647",
+      "title": "Aniket J on X: \"Just release 40+ new and free assets for my three.js asset pack. Contains all kinds of props! #gamedev #gameassets https://t.co/lZJsIGpZb4\" / X",
+      "url": "https://x.com/aniketjart/status/2082636582306353548",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1024",
+      "parentId": "647",
+      "title": "YouTube",
+      "url": "https://www.youtube.com/watch?v=nUsHrO60Ubo",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1025",
+      "parentId": "647",
+      "title": "Parametric Three.js Axe Factor",
+      "url": "https://aistudio.google.com/prompts/131aUZhJg--pIiuhm7nxh4zvPUAA164RI",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1026",
+      "parentId": "647",
+      "title": "Dubber - Audio Separator",
+      "url": "https://colab.research.google.com/drive/1IToI84MY-f90Vb7HBs65e2bn6vNmH2Zg#scrollTo=6i4PDQSwBmqL",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "colab"
+        ],
+        "description": "Google Colab notebook"
+      }
+    },
+    {
+      "id": "1027",
+      "parentId": "647",
+      "title": "Dubber - Transcription Speaker Diarization",
+      "url": "https://colab.research.google.com/drive/17IWoAiK6703FOFGSvMrh4BSdizkA3ssF#scrollTo=W9jYgOZeDSZO",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "colab"
+        ],
+        "description": "Google Colab notebook"
+      }
+    },
+    {
+      "id": "1028",
+      "parentId": "300",
+      "title": "GitHub - shanraisshan/claude-code-best-practice: from vibe coding to agentic engineering - practice makes claude perfect · GitHub",
+      "url": "https://github.com/shanraisshan/claude-code-best-practice",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1029",
+      "parentId": "300",
+      "title": "GitHub - thedotmack/claude-mem: A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions. · GitHub",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1030",
+      "parentId": "300",
+      "title": "GitHub - Rishurajgautam24/free-claude-code: Use claude-code for free in the terminal, VSCode extension or via discord like openclaw · GitHub",
+      "url": "https://github.com/Rishurajgautam24/free-claude-code",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1031",
+      "parentId": "300",
+      "title": "GitHub - affaan-m/everything-claude-code: The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. · GitHub",
+      "url": "https://github.com/affaan-m/everything-claude-code",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "search",
+          "codex",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1032",
+      "parentId": "300",
+      "title": "GitHub - obra/superpowers: An agentic skills framework & software development methodology that works. · GitHub",
+      "url": "https://github.com/obra/superpowers?tab=readme-ov-file",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1033",
+      "parentId": "300",
+      "title": "GitHub - hesreallyhim/awesome-claude-code: A curated list of awesome skills, hooks, slash-commands, agent orchestrators, applications, and plugins for Claude Code by Anthropic · GitHub",
+      "url": "https://github.com/hesreallyhim/awesome-claude-code",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "anthropic",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1034",
+      "parentId": "300",
+      "title": "GitHub - nextlevelbuilder/ui-ux-pro-max-skill: An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms · GitHub",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "design",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1035",
+      "parentId": "300",
+      "title": "GitHub - upscayl/upscayl: 🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows. · GitHub",
+      "url": "https://github.com/upscayl/upscayl#-windows",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "image",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1036",
+      "parentId": "300",
+      "title": "GitHub - tirth8205/code-review-graph: Local knowledge graph for Claude Code. Builds a persistent map of your codebase so Claude reads only what matters — 6.8× fewer tokens on reviews and up to 49× on daily coding tasks. · GitHub",
+      "url": "https://github.com/tirth8205/code-review-graph",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1037",
+      "parentId": "700",
+      "title": "Google Drive",
+      "url": "https://drive.google.com/drive/?lfhs=2",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1038",
+      "parentId": "700",
+      "title": "Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/u/0/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1039",
+      "parentId": "700",
+      "title": "Stitch - Design with AI",
+      "url": "https://stitch.withgoogle.com/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "design"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "id": "1040",
+      "parentId": "700",
+      "title": "NotebookLM",
+      "url": "https://notebooklm.google.com/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1041",
+      "parentId": "700",
+      "title": "YouTube",
+      "url": "https://www.youtube.com/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1042",
+      "parentId": "700",
+      "title": "Alya hits on her Crush | HINDI DUB | Alya Sometimes Hides Her Feelings in Russian",
+      "url": "https://www.youtube.com/watch?v=uLENIok9Dr8",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1043",
+      "parentId": "540",
+      "title": "Downloads",
+      "url": "https://www.youtube.com/feed/downloads",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1044",
+      "parentId": "540",
+      "title": "Playlists",
+      "url": "https://www.youtube.com/feed/playlists",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube",
+          "playlist"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1045",
+      "parentId": "100",
+      "title": "Claude",
+      "url": "https://claude.ai/new",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "claude"
+        ],
+        "description": "Claude AI conversation"
+      }
+    },
+    {
+      "id": "1046",
+      "parentId": "100",
+      "title": "Google Gemini",
+      "url": "https://gemini.google.com/app?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini"
+        ],
+        "description": "Gemini AI prompt"
+      }
+    },
+    {
+      "id": "1047",
+      "parentId": "100",
+      "title": "Grok",
+      "url": "https://grok.com/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1048",
+      "parentId": "100",
+      "title": "ChatGPT",
+      "url": "https://chatgpt.com/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1049",
+      "parentId": "100",
+      "title": "DeepSeek - Into the Unknown",
+      "url": "https://chat.deepseek.com/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1050",
+      "parentId": "100",
+      "title": "Meta AI",
+      "url": "https://meta.ai/?__pwa=1",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "meta-ai"
+        ],
+        "description": "Meta AI prompt"
+      }
+    },
+    {
+      "id": "1051",
+      "parentId": "100",
+      "title": "Perplexity",
+      "url": "https://www.perplexity.ai/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1052",
+      "parentId": "100",
+      "title": "Qwen Coder",
+      "url": "https://coder.qwen.ai/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1053",
+      "parentId": "100",
+      "title": "Google AI Studio",
+      "url": "https://aistudio.google.com/prompts/new_chat?model=gemini-3-flash-preview",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1054",
+      "parentId": "100",
+      "title": "Vibe",
+      "url": "https://chat.mistral.ai/work",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1055",
+      "parentId": "100",
+      "title": "AI Studio - Mistral AI",
+      "url": "https://console.mistral.ai/home",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1056",
+      "parentId": "800",
+      "title": "opencode",
+      "url": "https://opencode.ai/workspace/wrk_01KWDPZECBSKBEKAQNAYHDFA3G/members",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1057",
+      "parentId": "800",
+      "title": "Start for Free",
+      "url": "https://www.alibabacloud.com/en/free?_p_lc=1&spm=a3c0i.45656938.nav-v2-dropdown-menu-4.d_main_0_0_2.4c53tkGztkGzhy&scm=20140722.M_1924._.V_1",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1058",
+      "parentId": "210",
+      "title": "AI Personal Companion: Define Personality, Backstory & Relationship for a Customizable Life Partner",
+      "url": "https://www.jenova.ai/en/resources/ai-personal-companion",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1059",
+      "parentId": "210",
+      "title": "Nous Research",
+      "url": "https://github.com/NousResearch",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "search",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1060",
+      "parentId": "230",
+      "title": "MemTensor/MemOS: Self-evolving memory OS for LLM & AI Agents: ultra-persistent memory, hybrid-retrieval, and cross-task skill reuse, with 35.24% token savings and DeepSeek Harness support.",
+      "url": "https://github.com/MemTensor/MemOS",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1061",
+      "parentId": "230",
+      "title": "ken2190/memu: MemU is an open-source memory framework for AI companions—high accuracy, fast retrieval, low cost. It acts as an intelligent \"memory folder\" that adapts to different scenarios, from different companions senarios.",
+      "url": "https://github.com/ken2190/memu",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1062",
+      "parentId": "230",
+      "title": "xiaona-ai/agent-memory: 🧠 A lightweight, file-based memory system for AI agents",
+      "url": "https://github.com/xiaona-ai/agent-memory",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1063",
+      "parentId": "550",
+      "title": "Grammar Error Correction Data",
+      "url": "https://aistudio.google.com/prompts/1PKIL5Wk0T0ipvKL7e0s_qf-BlBwYd3_f",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1064",
+      "parentId": "550",
+      "title": "SSC Exam Spelling Data Extract",
+      "url": "https://aistudio.google.com/prompts/1uhCybmz-fPsPF96E7F3FLrkz3jwYQS3L",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "ssc"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1065",
+      "parentId": "800",
+      "title": "Features Overview | Hermes Agent",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/overview",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1066",
+      "parentId": "550",
+      "title": "Extracting Vocabulary Data to",
+      "url": "https://aistudio.google.com/prompts/1J9yepCtTUkSGaPUFyWwrrJSI6mypICa-",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "vocabulary"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1067",
+      "parentId": "550",
+      "title": "PDF Data Extraction to JSON",
+      "url": "https://aistudio.google.com/prompts/1D88jtV6hYMAB9MWQXeq2PlEE4TM4lMn4",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "pdf",
+          "pdf"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1068",
+      "parentId": "647",
+      "title": "In india , where can be cheapest products like ram, vram, cpu and other pc components",
+      "url": "https://www.google.com/search?q=In+india+%2C+where+can+be+cheapest+products+like+ram%2C+vram%2C+cpu+and+other+pc+components&sca_esv=b13963ffd26e9754&sxsrf=APpeQnsjnAuGtubJWcuKC81buNY8bosLsw%3A1787579896528&ei=2E2MauX7Cvao1e8PrK3ZwAg&iflsig=ABILxe8AAAAAaoxb6O2w10g-gx74ALDhzZzZqcmm0Vqh&uact=5&sclient=gws-wiz&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cqCQj_06QnZs315LoFmPf5biSOxE8oEpeIrm3MXx-GrVbhsHZuZQcwju7cC5aYiuv3_WhuOzfcxKpEn6BmCSU0ZTTxp2ZCCS-SlyijoYIq4acb8jqYcpa_bwWQuigJWYf0mfwcuqgC63Ws-qsBayRvKyJxNejODFWhCqE0c3jrtylPNocjRusTBfykHf0E7THCsYLYQ&aep=10&ntc=1&mstk=AUtExfDeSMvMjqz1xXYZxD3iOeIaxsGYu4jmAu8WKWxF24nBlqfVbgsv4IA1otSvBkmL8ABKwUWVTrUFVjdG-tXNrAmdiufTxVVnXs4VMwlH-wnuEmeUsABjPkkmD86C5ISdjHeNbTzPX277N_s2KrWN9f4miX7QtJMGxiLYVHYs7Y2yADiQWiKaABWeJwyqHBcruhffZ1qaN1nfz5qPbvaHWGSmN7zbtRjziRJQGVS32___OzQTfFrtTK0xCw&aioh=3&csuir=1&cs=1&atvm=2&mtid=NU6MatviFOyU4-EP-KaQqQk&udm=50",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "rc",
+          "search"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "id": "1069",
+      "parentId": "800",
+      "title": "Comedian Voiceover",
+      "url": "https://colab.research.google.com/drive/1kQWtIgDEMXZoS1SrmU0WCHvhU28vgO1V#scrollTo=sbUN0MBSirVX",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "colab",
+          "voice"
+        ],
+        "description": "Google Colab notebook"
+      }
+    },
+    {
+      "id": "1070",
+      "parentId": "501",
+      "title": "REASONING BOOSTER",
+      "url": "https://www.testranking.in/free-test/reasoning-booster/964/9",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "reasoning"
+        ],
+        "description": "Online test platform"
+      }
+    },
+    {
+      "id": "1071",
+      "parentId": "501",
+      "title": "Rojgar With Ankit",
+      "url": "https://rojgarwithankit.co.in/test-series/408/tests?subjectId=-1",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ssc"
+        ],
+        "description": "Rojgar With Ankit study resource"
+      }
+    },
+    {
+      "id": "1072",
+      "parentId": "500",
+      "title": "1776759751513_image021.png (387×366)",
+      "url": "https://static-appxdb-v2.akamai.net.in/website/bulk_uploader_images/1776759751513_image021.png",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "image"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "id": "1073",
+      "parentId": "510",
+      "title": "Group Theory",
+      "url": "https://www.youtube.com/playlist?list=PLU6SqdYcYsfKaQARA0_vnhuXbxmuOQVFF",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube",
+          "maths"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1074",
+      "parentId": "510",
+      "title": "Group Theory | BSc 2nd Year | HPU | Lifostudy",
+      "url": "https://www.youtube.com/playlist?list=PLl_2811dQWRqFdVrXY6h3ga6t4j-bnUN9",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube",
+          "maths"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1075",
+      "parentId": "540",
+      "title": "RWA SSC EXAMS",
+      "url": "https://www.youtube.com/@RWASSCEXAMS/playlists",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube",
+          "ssc"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1076",
+      "parentId": "510",
+      "title": "NEXTER NUMBER SYSTEM",
+      "url": "https://aistudio.google.com/prompts/1XxTI0-_Pml43cuBRWZ5id0SgssfN6mTJ",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "maths"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1077",
+      "parentId": "510",
+      "title": "Maths Number System Lecture No",
+      "url": "https://aistudio.google.com/prompts/19pAXtnFCW4wdsx2KLNJZLvm8T-LkAHTv",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "maths"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1078",
+      "parentId": "500",
+      "title": "Rojgar With Ankit",
+      "url": "https://rojgarwithankit.co.in/new-courses?folderId=186",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ssc"
+        ],
+        "description": "Rojgar With Ankit study resource"
+      }
+    },
+    {
+      "id": "1079",
+      "parentId": "520",
+      "title": "Geo PDF",
+      "url": "https://aistudio.google.com/prompts/1_X8y2yA3XX89k0J9vxpPEELmwmqUFbiH",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "pdf",
+          "geography",
+          "pdf"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1080",
+      "parentId": "550",
+      "title": "Englishs PDF",
+      "url": "https://aistudio.google.com/prompts/1bPE34iZAKTyklYh9JnHwQBWZ8ScwCCWh",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "pdf",
+          "english",
+          "pdf"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1081",
+      "parentId": "500",
+      "title": "Sankalp Series PDFs",
+      "url": "https://rojgarwithankit.co.in/new-courses/979/content?activeTab=Content",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ssc",
+          "pdf",
+          "pdf"
+        ],
+        "description": "Rojgar With Ankit study resource"
+      }
+    },
+    {
+      "id": "1082",
+      "parentId": "520",
+      "title": "Geo sankalp",
+      "url": "https://aistudio.google.com/prompts/1bUpsdB-w7dzuH_4XX6D1a2SQKC5e0pBk",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "geography"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1083",
+      "parentId": "520",
+      "title": "Polity",
+      "url": "https://aistudio.google.com/prompts/16MeFTU-6ymnizJo66OKsfOo78uOnmzch",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "polity"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1084",
+      "parentId": "500",
+      "title": "Rajasthan CET Syllabus & Exam Pattern 2026, Download PDF For Graduation & 12th Level Exam",
+      "url": "https://www.adda247.com/exams/rajasthan/rajasthan-cet-syllabus/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "pdf",
+          "pdf"
+        ],
+        "description": "Adda247 exam resource"
+      }
+    },
+    {
+      "id": "1085",
+      "parentId": "647",
+      "title": "AnimeDrive – Best Site to Download Anime in Hindi Dubbed & Dual Audio",
+      "url": "https://animedrive.in/page/2/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1086",
+      "parentId": "550",
+      "title": "how to make an ai coding agent best in web design",
+      "url": "https://www.google.com/search?q=how+to+make+an+ai+coding+agent+best+in+web+design&sca_esv=c9e03337c92c222f&sxsrf=APpeQnujoWvuYWpf5apuUjkM5pRM9BirYQ%3A1785246148948&source=hp&ei=xLFoavbeNaKaseMP5oe6gQY&iflsig=ABILxe8AAAAAami_1EhQoVBL2Vai77yTsIAfFIHxwa66&ved=0ahUKEwj20KmUwPWVAxUiTWwGHeaDLmAQ4dUDCCs&uact=5&oq=how+to+make+an+ai+coding+agent+best+in+web+design&gs_lp=Egdnd3Mtd2l6IjFob3cgdG8gbWFrZSBhbiBhaSBjb2RpbmcgYWdlbnQgYmVzdCBpbiB3ZWIgZGVzaWduMgUQABjvBTIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBEjgZlCUBFinYHABeACQAQCYAaQCoAGxUKoBBzAuMTYuMzO4AQPIAQD4AQGYAjKgApJTqAIKwgIKEAAYAxiPARjqAsICChAuGAMYjwEY6gLCAggQABiABBixA8ICCBAuGIAEGLEDwgIREC4YgwEYxwEYsQMY0QMYgATCAhQQLhiABBiKBRiNBhixAxjHARivAcICBRAAGIAEwgIOEAAYgAQYigUYsQMYgwHCAhEQABiABBiKBRiNBhixAxiDAcICERAuGIAEGLEDGIMBGMcBGNEDwgIFEC4YgATCAgsQABiABBiKBRixA8ICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIFECEYnwXCAgQQIRgVmAMU8QWi1dm3YF5WZpIHBzEuMTUuMzSgB8iZArIHBzAuMTUuMzS4B_5SwgcJMS4xNS4zMi4yyAfRAYAIAQ&sclient=gws-wiz&zx=1785246166820",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "rc",
+          "design",
+          "search"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "id": "1087",
+      "parentId": "642",
+      "title": "codeforreal1/compressO: Convert any video/image into a tiny size. 100% free & open-source. Available for Mac, Windows & Linux.",
+      "url": "https://github.com/codeforreal1/compressO",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "video",
+          "image",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1088",
+      "parentId": "642",
+      "title": "roboflow/supervision: We write your reusable computer vision tools. 💜",
+      "url": "https://github.com/roboflow/supervision",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1089",
+      "parentId": "642",
+      "title": "hasaneyldrm/exercises-dataset: A comprehensive dataset of 433 fitness exercises. Each entry includes name, category, target muscle group, equipment, instructions, thumbnail image, and animation video.",
+      "url": "https://github.com/hasaneyldrm/exercises-dataset",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "video",
+          "image",
+          "animation",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1090",
+      "parentId": "647",
+      "title": "allenai/olmocr: Toolkit for linearizing PDFs for LLM datasets/training",
+      "url": "https://github.com/allenai/olmocr",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "pdf",
+          "pdf",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1091",
+      "parentId": "643",
+      "title": "altic-dev/FluidVoice: Fastest and only macOS Dictation app with on-device STT and custom trained AI enhancement model - Local Wispr Flow alternative. One ⭐ takes us a long way :)) Windows, iOS and Linux coming soon.",
+      "url": "https://github.com/altic-dev/FluidVoice",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "voice",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1092",
+      "parentId": "620",
+      "title": "yikart/AiToEarn: Let's use AI to Earn!",
+      "url": "https://github.com/yikart/AiToEarn",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1093",
+      "parentId": "642",
+      "title": "calesthio/OpenMontage: World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "video",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1094",
+      "parentId": "210",
+      "title": "bradygaster/squad: Squad: AI agent teams for any project",
+      "url": "https://github.com/bradygaster/squad",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1095",
+      "parentId": "220",
+      "title": "appcypher/awesome-mcp-servers: Awesome MCP Servers - A curated list of Model Context Protocol servers",
+      "url": "https://github.com/appcypher/awesome-mcp-servers#databases",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1096",
+      "parentId": "643",
+      "title": "KoljaB/RealtimeSTT: A robust, efficient, low-latency speech-to-text library with advanced voice activity detection, wake word activation and instant transcription.",
+      "url": "https://github.com/KoljaB/RealtimeSTT",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "voice",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1097",
+      "parentId": "647",
+      "title": "stt repos - Brave Search",
+      "url": "https://search.brave.com/search?q=stt+repos&source=desktop&summary=1&conversation=09452ef646bfd8e4cf77fa43127035f53845",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "rc"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "id": "1098",
+      "parentId": "620",
+      "title": "GoEmotions: A Dataset for Fine-Grained Emotion Classification",
+      "url": "https://research.google/blog/goemotions-a-dataset-for-fine-grained-emotion-classification/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1099",
+      "parentId": "647",
+      "title": "DigitalPlatDev/FreeDomain: DigitalPlat FreeDomain: Free Domain For Everyone",
+      "url": "https://github.com/DigitalPlatDev/FreeDomain",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1100",
+      "parentId": "210",
+      "title": "langgenius/dify: Production-ready platform for agentic workflow development.",
+      "url": "https://github.com/langgenius/dify",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1101",
+      "parentId": "620",
+      "title": "Genymobile/scrcpy: Display and control your Android device",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "android",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1102",
+      "parentId": "210",
+      "title": "msitarzewski/agency-agents: A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1103",
+      "parentId": "642",
+      "title": "Comfy-Org/ComfyUI: The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1104",
+      "parentId": "642",
+      "title": "harry0703/MoneyPrinterTurbo: 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "video",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1105",
+      "parentId": "642",
+      "title": "hacksider/Deep-Live-Cam: real time face swap and one-click video deepfake with only a single image",
+      "url": "https://github.com/hacksider/Deep-Live-Cam",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "face-swap",
+          "video",
+          "image",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1106",
+      "parentId": "647",
+      "title": "sherlock-project/sherlock: Hunt down social media accounts by username across social networks",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1107",
+      "parentId": "640",
+      "title": "juliangarnier/anime: JavaScript animation engine",
+      "url": "https://github.com/juliangarnier/anime",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "animation",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1108",
+      "parentId": "644",
+      "title": "OpenBB-finance/OpenBB: Financial data platform for analysts, quants and AI agents.",
+      "url": "https://github.com/OpenBB-finance/OpenBB",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "finance",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1109",
+      "parentId": "210",
+      "title": "FoundationAgents/MetaGPT: 🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
+      "url": "https://github.com/FoundationAgents/MetaGPT",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1110",
+      "parentId": "647",
+      "title": "chrislgarry/Apollo-11 - 68.2k Stars · Global Rank #259",
+      "url": "https://www.star-history.com/chrislgarry/apollo-11",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": "GitHub star history chart"
+      }
+    },
+    {
+      "id": "1111",
+      "parentId": "647",
+      "title": "chartjs/Chart.js - 67.5k Stars · Global Rank #262",
+      "url": "https://www.star-history.com/chartjs/chart.js",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": "GitHub star history chart"
+      }
+    },
+    {
+      "id": "1112",
+      "parentId": "647",
+      "title": "labmlai/annotated_deep_learning_paper_implementations - 67k Stars · Global Rank #265",
+      "url": "https://www.star-history.com/labmlai/annotated_deep_learning_paper_implementations",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": "GitHub star history chart"
+      }
+    },
+    {
+      "id": "1113",
+      "parentId": "647",
+      "title": "D4Vinci/Scrapling: 🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!",
+      "url": "https://github.com/D4Vinci/Scrapling",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "scraping",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1114",
+      "parentId": "645",
+      "title": "LadybirdBrowser/ladybird: Truly independent web browser",
+      "url": "https://github.com/LadybirdBrowser/ladybird",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "browser",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1115",
+      "parentId": "620",
+      "title": "OpenCut-app/OpenCut: The open-source CapCut alternative",
+      "url": "https://github.com/OpenCut-app/OpenCut",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "video-editor",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1116",
+      "parentId": "644",
+      "title": "virattt/ai-hedge-fund: An AI Hedge Fund Team",
+      "url": "https://github.com/virattt/ai-hedge-fund",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "finance",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1117",
+      "parentId": "220",
+      "title": "sansan0/TrendRadar: ⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 + RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 + AI 分析简报直推手机，也支持接入 MCP 架构，赋能 AI 自然语言对话分析、情感洞察与趋势预测等。支持 Docker ，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 等渠道智能推送。",
+      "url": "https://github.com/sansan0/TrendRadar",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "notifications",
+          "telegram",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1118",
+      "parentId": "642",
+      "title": "ultralytics/ultralytics: Ultralytics YOLO26, YOLO11, YOLOv8 — object detection, instance segmentation, semantic segmentation, image classification, pose estimation, object tracking",
+      "url": "https://github.com/ultralytics/ultralytics",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "image",
+          "computer-vision",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1119",
+      "parentId": "647",
+      "title": "ZhuLinsen/daily_stock_analysis - 52.8k Stars · Global Rank #416",
+      "url": "https://www.star-history.com/zhulinsen/daily_stock_analysis",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "finance"
+        ],
+        "description": "GitHub star history chart"
+      }
+    },
+    {
+      "id": "1120",
+      "parentId": "647",
+      "title": "makeplane/plane - 53.6k Stars · Global Rank #411",
+      "url": "https://www.star-history.com/makeplane/plane",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": "GitHub star history chart"
+      }
+    },
+    {
+      "id": "1121",
+      "parentId": "646",
+      "title": "goabstract/Awesome-Design-Tools: The best design tools and plugins for everything 👉",
+      "url": "https://github.com/goabstract/Awesome-Design-Tools",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "design",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1122",
+      "parentId": "647",
+      "title": "hashicorp/vault - 35.9k Stars · Global Rank #817",
+      "url": "https://www.star-history.com/hashicorp/vault",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "security"
+        ],
+        "description": "GitHub star history chart"
+      }
+    },
+    {
+      "id": "1123",
+      "parentId": "646",
+      "title": "lfnovo/open-notebook: An Open Source implementation of Notebook LM with more flexibility and features",
+      "url": "https://github.com/lfnovo/open-notebook",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1124",
+      "parentId": "645",
+      "title": "tailscale/tailscale: The easiest, most secure way to use WireGuard and 2FA.",
+      "url": "https://github.com/tailscale/tailscale",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1125",
+      "parentId": "642",
+      "title": "FujiwaraChoki/MoneyPrinterV2: Automate the process of making money online.",
+      "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1126",
+      "parentId": "643",
+      "title": "fishaudio/fish-speech: SOTA Open Source TTS",
+      "url": "https://github.com/fishaudio/fish-speech",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "voice",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1127",
+      "parentId": "640",
+      "title": "odoo/odoo: Odoo. Open Source Apps To Grow Your Business.",
+      "url": "https://github.com/odoo/odoo",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "erp",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1128",
+      "parentId": "640",
+      "title": "meilisearch/meilisearch: A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications.",
+      "url": "https://github.com/meilisearch/meilisearch",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "search",
+          "search",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1129",
+      "parentId": "646",
+      "title": "toeverything/AFFiNE: There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "productivity",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1130",
+      "parentId": "640",
+      "title": "strapi/strapi: 🚀 Strapi is the leading open-source headless CMS. It’s 100% JavaScript/TypeScript, fully customizable, and developer-first.",
+      "url": "https://github.com/strapi/strapi",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "cms",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1131",
+      "parentId": "647",
+      "title": "opendatalab/MinerU: Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.",
+      "url": "https://github.com/opendatalab/MinerU",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "pdf",
+          "pdf",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1132",
+      "parentId": "647",
+      "title": "remotion-dev/remotion - 51.8k Stars · Global Rank #431",
+      "url": "https://www.star-history.com/remotion-dev/remotion",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "video"
+        ],
+        "description": "GitHub star history chart"
+      }
+    },
+    {
+      "id": "1133",
+      "parentId": "646",
+      "title": "poteto/hiring-without-whiteboards: ⭐️ Companies that don't have a broken hiring process",
+      "url": "https://github.com/poteto/hiring-without-whiteboards",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "hiring",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1134",
+      "parentId": "640",
+      "title": "ChromeDevTools/chrome-devtools-mcp: Chrome DevTools for coding agents",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1135",
+      "parentId": "645",
+      "title": "getsentry/sentry: Developer-first error tracking and performance monitoring",
+      "url": "https://github.com/getsentry/sentry",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "monitoring",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1136",
+      "parentId": "647",
+      "title": "chubin/cheat.sh: the only cheat sheet you need",
+      "url": "https://github.com/chubin/cheat.sh",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "cheatsheet",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1137",
+      "parentId": "646",
+      "title": "remoteintech/remote-jobs: Source for remoteintech.company — a community-maintained directory of remote-friendly tech companies",
+      "url": "https://github.com/remoteintech/remote-jobs",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "remote-jobs",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1138",
+      "parentId": "640",
+      "title": "ant-design/ant-design-pro: 👨🏻‍💻👩🏻‍💻 Use Ant Design like a Pro!",
+      "url": "https://github.com/ant-design/ant-design-pro",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "design",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1139",
+      "parentId": "647",
+      "title": "google-research/google-research: Google Research",
+      "url": "https://github.com/google-research/google-research",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "search",
+          "research",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1140",
+      "parentId": "200",
+      "title": "anthropics/financial-services",
+      "url": "https://github.com/anthropics/financial-services",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "anthropic",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1141",
+      "parentId": "300",
+      "title": "Yeachan-Heo/oh-my-codex: OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
+      "url": "https://github.com/Yeachan-Heo/oh-my-codex",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "codex",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1142",
+      "parentId": "642",
+      "title": "iawia002/lux: 👾 Fast and simple video download library and CLI tool written in Go",
+      "url": "https://github.com/iawia002/lux",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "video",
+          "downloader",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1143",
+      "parentId": "200",
+      "title": "claude-plugins-official/plugins at main · anthropics/claude-plugins-official",
+      "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "anthropic",
+          "claude",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1144",
+      "parentId": "645",
+      "title": "binwiederhier/ntfy: Send push notifications to your phone or desktop using PUT/POST",
+      "url": "https://github.com/binwiederhier/ntfy",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "notifications",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1145",
+      "parentId": "640",
+      "title": "GoogleChrome/lighthouse: Automated auditing, performance metrics, and best practices for the web.",
+      "url": "https://github.com/GoogleChrome/lighthouse",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "web-perf",
+          "performance",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1146",
+      "parentId": "645",
+      "title": "DrKLO/Telegram: Telegram for Android source",
+      "url": "https://github.com/DrKLO/Telegram",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "android",
+          "telegram",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1147",
+      "parentId": "642",
+      "title": "hpcaitech/Open-Sora: Open-Sora: Democratizing Efficient Video Production for All",
+      "url": "https://github.com/hpcaitech/Open-Sora",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "video",
+          "video-gen",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1148",
+      "parentId": "642",
+      "title": "Lynpoint/CyberVerse: Self hosted, real-time digital human agent platform. Build voice-first AI agents with WebRTC, persona memory, tools, RAG, and optional digital-human video.",
+      "url": "https://github.com/Lynpoint/CyberVerse",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "voice",
+          "video",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1149",
+      "parentId": "643",
+      "title": "microsoft/VibeVoice: Open-Source Frontier Voice AI",
+      "url": "https://github.com/microsoft/VibeVoice",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "voice",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1150",
+      "parentId": "646",
+      "title": "CherryHQ/cherry-studio: AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
+      "url": "https://github.com/CherryHQ/cherry-studio",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1151",
+      "parentId": "210",
+      "title": "Panniantong/Agent-Reach: Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "search",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1152",
+      "parentId": "643",
+      "title": "moeru-ai/airi: 💖🧸 Self hosted, you-owned Grok Companion, a container of souls of waifu, cyber livings to bring them into our worlds, wishing to achieve Neuro-sama's altitude. Capable of realtime voice chat, Minecraft, Factorio playing. Web / macOS / Windows supported.",
+      "url": "https://github.com/moeru-ai/airi",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "voice",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1153",
+      "parentId": "647",
+      "title": "coreyhaines31/marketingskills - 35.7k Stars · Global Rank #829",
+      "url": "https://www.star-history.com/coreyhaines31/marketingskills",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "marketing"
+        ],
+        "description": "GitHub star history chart"
+      }
+    },
+    {
+      "id": "1154",
+      "parentId": "645",
+      "title": "AdguardTeam/AdGuardHome: Network-wide ads & trackers blocking DNS server",
+      "url": "https://github.com/AdguardTeam/AdGuardHome",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "dns",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1155",
+      "parentId": "642",
+      "title": "facebookresearch/detectron2: Detectron2 is a platform for object detection, segmentation and other visual recognition tasks.",
+      "url": "https://github.com/facebookresearch/detectron2",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "search",
+          "computer-vision",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1156",
+      "parentId": "647",
+      "title": "xitu/gold-miner: 🥇掘金翻译计划，可能是世界最大最好的英译中技术社区，最懂读者和译者的翻译平台：",
+      "url": "https://github.com/xitu/gold-miner",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "translation",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1157",
+      "parentId": "642",
+      "title": "CMU-Perceptual-Computing-Lab/openpose: OpenPose: Real-time multi-person keypoint detection library for body, face, hands, and foot estimation",
+      "url": "https://github.com/CMU-Perceptual-Computing-Lab/openpose",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "pose-estimation",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1158",
+      "parentId": "645",
+      "title": "blakeblackshear/frigate: NVR with realtime local object detection for IP cameras",
+      "url": "https://github.com/blakeblackshear/frigate",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "security",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1159",
+      "parentId": "210",
+      "title": "ashishpatel26/500-AI-Agents-Projects: The 500 AI Agents Projects is a curated collection of AI agent use cases across various industries. It showcases practical applications and provides links to open-source projects for implementation, illustrating how AI agents are transforming sectors such as healthcare, finance, education, retail, and more.",
+      "url": "https://github.com/ashishpatel26/500-AI-Agents-Projects",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "finance",
+          "ai-agents",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1160",
+      "parentId": "645",
+      "title": "searxng/searxng: SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.",
+      "url": "https://github.com/searxng/searxng",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "rc",
+          "search",
+          "search",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1161",
+      "parentId": "647",
+      "title": "MAIN",
+      "url": "https://www.star-history.com/linexjlin/gpts",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": "GitHub star history chart"
+      }
+    },
+    {
+      "id": "1162",
+      "parentId": "642",
+      "title": "iperov/DeepFaceLive: Real-time face swap for PC streaming or video calls",
+      "url": "https://github.com/iperov/DeepFaceLive",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "face-swap",
+          "video",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1163",
+      "parentId": "410",
+      "title": "Image Prompt Creation",
+      "url": "https://chatgpt.com/c/6a68fcb8-c084-83ee-be0a-5daa5436306b",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "prompt",
+          "image"
+        ],
+        "description": "AI prompt template"
+      }
+    },
+    {
+      "id": "1164",
+      "parentId": "410",
+      "title": "Meta AI",
+      "url": "https://meta.ai/prompt/66fef487-8b00-40ca-8802-c6c4fb5c76c0",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "meta-ai"
+        ],
+        "description": "Meta AI prompt"
+      }
+    },
+    {
+      "id": "1165",
+      "parentId": "410",
+      "title": "may current affairs 2026",
+      "url": "https://www.youtube.com/results?search_query=may+current+affairs+2026&sp=mAEB",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube",
+          "current-affairs"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1166",
+      "parentId": "420",
+      "title": "Topic Generator",
+      "url": "https://aistudio.google.com/prompts/1CVPWfiWRcrg2GDn595RAyIEU92J7Dqdg",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "generator"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1167",
+      "parentId": "420",
+      "title": "Script Generator",
+      "url": "https://aistudio.google.com/prompts/1YE-rFzWDlyYJsfDzp9bawUMl5OviKbKz",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "generator"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1168",
+      "parentId": "420",
+      "title": "Prompter",
+      "url": "https://claude.ai/chat/131cb99b-487e-4c67-b5f2-96ef28f3e768",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "claude",
+          "prompt"
+        ],
+        "description": "Claude AI conversation"
+      }
+    },
+    {
+      "id": "1169",
+      "parentId": "441",
+      "title": "Gemini - Prompter",
+      "url": "https://gemini.google.com/app/f59a298e18a6c831?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini",
+          "prompt"
+        ],
+        "description": "Gemini AI prompt"
+      }
+    },
+    {
+      "id": "1170",
+      "parentId": "431",
+      "title": "Google Studio - RC Creator",
+      "url": "https://aistudio.google.com/prompts/1AyZuCOH_iqNkcOTRuJyFN5UkwolouvRS",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "rc"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1171",
+      "parentId": "431",
+      "title": "RC Generator",
+      "url": "https://gemini.google.com/app/a9d6a40b15787893?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini",
+          "generator",
+          "rc"
+        ],
+        "description": "Gemini AI prompt"
+      }
+    },
+    {
+      "id": "1172",
+      "parentId": "430",
+      "title": "Questions Generator/Organizer",
+      "url": "https://aistudio.google.com/prompts/1O-6UR1kCSe3CycNLdHM9eblu67ai5V0k",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "generator"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1173",
+      "parentId": "441",
+      "title": "PQRS Generator",
+      "url": "https://gemini.google.com/app/090eae5d84293cb5?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini",
+          "generator",
+          "pqrs"
+        ],
+        "description": "Gemini AI prompt"
+      }
+    },
+    {
+      "id": "1174",
+      "parentId": "430",
+      "title": "Generator",
+      "url": "https://gemini.google.com/app/fc1202882a33821d?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini",
+          "generator"
+        ],
+        "description": "Gemini AI prompt"
+      }
+    },
+    {
+      "id": "1175",
+      "parentId": "430",
+      "title": "Generator",
+      "url": "https://gemini.google.com/app/23dff78af47d4c4d?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini",
+          "generator"
+        ],
+        "description": "Gemini AI prompt"
+      }
+    },
+    {
+      "id": "1176",
+      "parentId": "430",
+      "title": "Generator",
+      "url": "https://gemini.google.com/app/13c467e48868e3a1?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini",
+          "generator"
+        ],
+        "description": "Gemini AI prompt"
+      }
+    },
+    {
+      "id": "1177",
+      "parentId": "430",
+      "title": "Generator",
+      "url": "https://gemini.google.com/app/83579de886b52290?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini",
+          "generator"
+        ],
+        "description": "Gemini AI prompt"
+      }
+    },
+    {
+      "id": "1178",
+      "parentId": "441",
+      "title": "JSON Formator (Vocab)",
+      "url": "https://aistudio.google.com/prompts/1fZ717ivXzIE-xgMGh77lCt_Ql2FsBXG3",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio",
+          "vocabulary"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1179",
+      "parentId": "441",
+      "title": "Verifier & Correcter",
+      "url": "https://aistudio.google.com/prompts/1adLnRelboEOg1ZObDcLRoIV7vhlXuFDs",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1180",
+      "parentId": "431",
+      "title": "Searcher & Prompter",
+      "url": "https://gemini.google.com/app/bcafbdbbf310f46b?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini",
+          "prompt",
+          "rc",
+          "search"
+        ],
+        "description": "Gemini AI prompt",
+        "favorite": true
+      }
+    },
+    {
+      "id": "1181",
+      "parentId": "441",
+      "title": "UI Designer",
+      "url": "https://claude.ai/chat/060f34f9-4079-4cf3-94b1-fe4ea9ce4352",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "claude",
+          "design"
+        ],
+        "description": "Claude AI conversation"
+      }
+    },
+    {
+      "id": "1182",
+      "parentId": "430",
+      "title": "English by Ananya Ma'am SSC 2026",
+      "url": "https://www.youtube.com/playlist?list=PL7XTtdz5e9kM36Lb3Cs8JcNk4-fFUQFaD",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube",
+          "english",
+          "ssc"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1183",
+      "parentId": "430",
+      "title": "SSC Foundation 2026 SSC Wallah",
+      "url": "https://youtube.com/playlist?list=PL22tVRPdgORH5s9Uik8VnPrNf_ZrWB7vJ&si=A8MyK5pJZ0Ocogsp",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube",
+          "ssc"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1184",
+      "parentId": "500",
+      "title": "PYQs",
+      "url": "https://www.oliveboard.in/blog/ssc-selection-post-pyps/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": "Oliveboard study material"
+      }
+    },
+    {
+      "id": "1185",
+      "parentId": "430",
+      "title": "Raw -> JSON",
+      "url": "https://claude.ai/chat/51dc1209-2ff4-4349-a6c1-ba2c9ff2dfae",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "claude"
+        ],
+        "description": "Claude AI conversation"
+      }
+    },
+    {
+      "id": "1186",
+      "parentId": "430",
+      "title": "Complete the JSON",
+      "url": "https://aistudio.google.com/prompts/1aJV8L08VAB7IjQcSGilhaMkl-NlijsQ8",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "ai-studio"
+        ],
+        "description": "Google AI Studio prompt"
+      }
+    },
+    {
+      "id": "1187",
+      "parentId": "430",
+      "title": "Validate the JSON",
+      "url": "https://gemini.google.com/app/5724b3a8a3862d2f?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini"
+        ],
+        "description": "Gemini AI prompt"
+      }
+    },
+    {
+      "id": "1188",
+      "parentId": "900",
+      "title": "FreeBuff App",
+      "url": "https://freebuff.com/account?tab=overview",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1189",
+      "parentId": "900",
+      "title": "Free Plans for Students",
+      "url": "https://gemini.google.com/app/3ba027ca2c1ea647?hl=en-IN",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "gemini"
+        ],
+        "description": "Gemini AI prompt"
+      }
+    },
+    {
+      "id": "1190",
+      "parentId": "910",
+      "title": "AMD Ryzen™ AI Halo",
+      "url": "https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo.html",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1191",
+      "parentId": "800",
+      "title": "Opencode Zen",
+      "url": "https://opencode.ai/docs/zen/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1192",
+      "parentId": "800",
+      "title": "Cerebras",
+      "url": "https://cloud.cerebras.ai/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1193",
+      "parentId": "800",
+      "title": "Nvidia",
+      "url": "https://build.nvidia.com/settings/api-keys",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1194",
+      "parentId": "800",
+      "title": "Groq",
+      "url": "https://console.groq.com/docs/rate-limits",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1195",
+      "parentId": "630",
+      "title": "Linux AWS DevOps",
+      "url": "https://youtube.com/playlist?list=PLdRNkbtVPBrRFQQChK0Oi_U4_aXuSCp8T&si=tKsnSkbpkKQfm2VF",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "youtube"
+        ],
+        "description": "YouTube video or playlist"
+      }
+    },
+    {
+      "id": "1196",
+      "parentId": "630",
+      "title": "Jio",
+      "url": "https://jiopc.embibe.com/courses/select-book",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1197",
+      "parentId": "201",
+      "title": "Flux 4B GGUF",
+      "url": "https://huggingface.co/unsloth/FLUX.2-klein-4B-GGUF/tree/main",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "huggingface",
+          "downloader"
+        ],
+        "description": "Hugging Face model or demo"
+      }
+    },
+    {
+      "id": "1198",
+      "parentId": "642",
+      "title": "Motion Capturer for 3D Animation",
+      "url": "https://www.rokoko.com/products/vision",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "animation",
+          "3d"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "id": "1199",
+      "parentId": "642",
+      "title": "Free Mesh to Motion",
+      "url": "https://app.mesh2motion.org/",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [],
+        "description": ""
+      }
+    },
+    {
+      "id": "1200",
+      "parentId": "642",
+      "title": "2D and 3D Face Analysis",
+      "url": "https://github.com/deepinsight/insightface",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1201",
+      "parentId": "642",
+      "title": "Photo to Animation 3D",
+      "url": "https://github.com/met4citizen/TalkingHead",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "animation",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1202",
+      "parentId": "642",
+      "title": "Live Talking",
+      "url": "https://github.com/lipku/LiveTalking",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "talking-head",
+          "repo"
+        ],
+        "description": "GitHub repository"
+      }
+    },
+    {
+      "id": "1203",
+      "parentId": "642",
+      "title": "Face Fusion: Create new face from fusion",
+      "url": "https://github.com/facefusion/facefusion",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "github",
+          "repo"
+        ],
+        "description": "GitHub repository",
+        "favorite": true
+      }
+    },
+    {
+      "id": "1204",
+      "parentId": "2",
+      "title": "Explore Free Images, Wallpapers, & Backgrounds | Unsplash",
+      "url": "https://unsplash.com/explore",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "image"
+        ],
+        "description": ""
+      }
+    },
+    {
+      "id": "1205",
+      "parentId": "2",
+      "title": "Wallpaper Images - Free Download on Magnific (formerly Freepik)",
+      "url": "https://www.magnific.com/free-photos-vectors/wallpaper",
+      "isFolder": false,
+      "children": [],
+      "metadata": {
+        "tags": [
+          "image"
+        ],
+        "description": ""
+      }
+    },
     {
       "id": "2",
       "parentId": "0",
       "title": "Other Bookmarks",
       "url": "",
       "isFolder": true,
-      "children": ["950", "951"],
-      "metadata": { "icon": "Bookmark", "favorite": false, "tags": [], "description": "Miscellaneous bookmarks" }
-    },
-    { "id": "950", "parentId": "2", "title": "Unsplash", "url": "https://unsplash.com/explore", "isFolder": false, "children": [], "metadata": { "tags": ["images", "free", "stock"], "description": "Free high-resolution photos and images" } },
-    { "id": "951", "parentId": "2", "title": "Magnific (Wallpapers)", "url": "https://www.magnific.com/free-photos-vectors/wallpaper", "isFolder": false, "children": [], "metadata": { "tags": ["wallpapers", "free", "images"], "description": "Free wallpaper images and vectors" } }
+      "children": [
+        "1204",
+        "1205"
+      ],
+      "metadata": {
+        "icon": "Bookmark",
+        "favorite": false,
+        "tags": [],
+        "description": "Miscellaneous bookmarks"
+      }
+    }
   ]
 }
