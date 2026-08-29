@@ -80,23 +80,39 @@ function App() {
         return
       }
 
+      const idMap: Record<string, string> = {}
+
+      function resolveParentId(parentId: string): string {
+        if (idMap[parentId]) return idMap[parentId]
+        if (parentId === '1') return '1'
+        if (parentId === '2') return '2'
+        if (parentId === '0') return '0'
+        return parentId
+      }
+
       let imported = 0
       for (const item of data.bookmarks) {
+        const resolvedParent = resolveParentId(item.parentId || '1')
+
         if (item.isFolder) {
           const existing = bookmarks.find((b) => b.id === item.id)
           if (!existing) {
-            await createFolder(item.parentId || '1', item.title)
+            const newNode = await createFolder(resolvedParent, item.title)
+            if (newNode) idMap[item.id] = newNode
             imported++
+          } else {
+            idMap[item.id] = existing.id
           }
         } else {
           const existing = bookmarks.find((b) => b.id === item.id)
           if (!existing) {
-            await addBookmark({ title: item.title, url: item.url, parentId: item.parentId || '1' })
+            await addBookmark({ title: item.title, url: item.url, parentId: resolvedParent })
             imported++
           }
         }
         if (item.metadata) {
-          await setMeta(item.id, {
+          const targetId = idMap[item.id] || item.id
+          await setMeta(targetId, {
             tags: item.metadata.tags ?? [],
             description: item.metadata.description ?? '',
             icon: item.metadata.icon,
