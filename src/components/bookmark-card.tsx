@@ -49,11 +49,24 @@ export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate,
               </p>
             </div>
           </div>
-          <CardAction className="gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+          <CardAction className="gap-0.5">
             <Button
               variant="ghost"
               size="icon"
-              className="size-7 rounded-lg hover:bg-[#f1f5f9]"
+              className="size-7 rounded-lg hover:bg-[#fef2f2]"
+              onClick={(e: React.MouseEvent) => {
+                e.stopPropagation()
+                onToggleFavorite?.(bookmark.id, !metadata?.favorite)
+              }}
+            >
+              <Heart
+                className={`size-3.5 transition-colors ${metadata?.favorite ? 'fill-[#ef4444] text-[#ef4444]' : 'text-[#cbd5e1] hover:text-[#ef4444]'}`}
+              />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="size-7 rounded-lg hover:bg-[#f1f5f9] opacity-0 group-hover:opacity-100 transition-opacity"
               onClick={(e: React.MouseEvent) => {
                 e.stopPropagation()
                 onEdit(bookmark)
@@ -64,7 +77,7 @@ export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate,
             <Button
               variant="ghost"
               size="icon"
-              className="size-7 rounded-lg hover:bg-red-50"
+              className="size-7 rounded-lg hover:bg-red-50 opacity-0 group-hover:opacity-100 transition-opacity"
               onClick={(e: React.MouseEvent) => {
                 e.stopPropagation()
                 onDelete(bookmark.id)
