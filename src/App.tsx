@@ -293,9 +293,7 @@ function App() {
         {/* Logo area */}
         <div className="px-5 py-5 border-b border-[#e2e8f0]/80">
           <div className="flex items-center gap-3">
-            <div className="size-10 rounded-xl bg-gradient-to-br from-[#6366f1] to-[#818cf8] flex items-center justify-center shadow-lg shadow-[#6366f1]/20">
-              <Folder className="size-5 text-white" />
-            </div>
+            <img src="/logo.svg" alt="Logo" className="size-10 rounded-xl shadow-lg shadow-[#6366f1]/20" />
             <div>
               <h1 className="text-[15px] font-bold text-[#0f172a] tracking-tight">Bookmark Manager</h1>
               <div className="flex items-center gap-1.5 mt-0.5">

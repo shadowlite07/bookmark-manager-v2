@@ -13,15 +13,15 @@
   },
   "action": {
     "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
+      "16": "logo.svg",
+      "48": "logo.svg",
+      "128": "logo.svg"
     },
     "default_title": "Open Bookmark Manager"
   },
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "logo.svg",
+    "48": "logo.svg",
+    "128": "logo.svg"
   }
 }
