@@ -13,6 +13,7 @@ dist-ssr
 *.local
 *.zip
 bookmarks-*.json
+.freebuff
 
 # Editor directories and files
 .vscode/*
