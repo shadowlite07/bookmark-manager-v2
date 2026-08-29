@@ -2,7 +2,8 @@ import type { Bookmark, BookmarkMetadata } from '@/types/bookmark'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardAction, CardContent, CardHeader } from '@/components/ui/card'
-import { Folder, Pencil, Trash2, Globe } from 'lucide-react'
+import { folderAccent } from '@/lib/utils'
+import { Folder, Pencil, Trash2, Globe, ChevronRight } from 'lucide-react'
 
 interface BookmarkCardProps {
   bookmark: Bookmark
@@ -23,49 +24,53 @@ function getFavicon(url: string) {
 
 export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate }: BookmarkCardProps) {
   if (bookmark.isFolder) {
+    const accent = folderAccent(bookmark.id)
     return (
       <Card
-        className="group cursor-pointer hover:shadow-xl hover:shadow-[#6366f1]/10 hover:border-[#6366f1]/30 transition-all duration-300 bg-white border-[#e2e8f0]/80 rounded-2xl overflow-hidden"
+        className="group relative h-full cursor-pointer hover:shadow-md hover:-translate-y-0.5 hover:border-[#c7d2fe] transition-all duration-200 bg-white rounded-2xl overflow-hidden"
         onClick={() => onNavigate?.(bookmark.id)}
       >
         <CardHeader className="p-5">
-          <div className="flex items-center gap-4 min-w-0 flex-1">
-            <div className="size-14 rounded-2xl bg-gradient-to-br from-[#f0f4ff] to-[#e8eeff] flex items-center justify-center shrink-0 group-hover:from-[#6366f1]/10 group-hover:to-[#818cf8]/10 transition-all duration-300 shadow-sm">
-              <Folder className="size-7 text-[#6366f1]" />
+          <div className="flex items-start gap-3.5 min-w-0 flex-1">
+            <div
+              className={`size-12 rounded-xl bg-gradient-to-br ${accent.bg} flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-105`}
+            >
+              <Folder className="size-6" style={{ color: accent.icon }} strokeWidth={2} />
             </div>
-            <div className="flex-1 min-w-0">
-              <h3 className="text-[14px] font-bold text-[#0f172a] line-clamp-2 leading-snug group-hover:text-[#6366f1] transition-colors">
+            <div className="flex-1 min-w-0 pt-0.5">
+              <h3 className="text-[14px] font-semibold text-[#0f172a] line-clamp-2 leading-snug group-hover:text-[#4f46e5] transition-colors pr-6">
                 {bookmark.title || 'Untitled Folder'}
               </h3>
-              <p className="text-[12px] text-[#94a3b8] mt-1 font-medium">
+              <p className="text-[12px] text-[#94a3b8] mt-1">
                 {bookmark.children.length} {bookmark.children.length === 1 ? 'item' : 'items'}
               </p>
             </div>
           </div>
-          <CardAction className="gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <CardAction className="gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150">
             <Button
               variant="ghost"
               size="icon"
-              className="size-8 rounded-xl hover:bg-[#f1f5f9]"
+              className="size-7 rounded-lg hover:bg-[#f1f5f9]"
               onClick={(e: React.MouseEvent) => {
                 e.stopPropagation()
                 onEdit(bookmark)
               }}
             >
-              <Pencil className="size-4 text-[#64748b]" />
+              <Pencil className="size-3.5 text-[#64748b]" />
             </Button>
             <Button
               variant="ghost"
               size="icon"
-              className="size-8 rounded-xl hover:bg-red-50"
+              className="size-7 rounded-lg hover:bg-red-50"
               onClick={(e: React.MouseEvent) => {
                 e.stopPropagation()
                 onDelete(bookmark.id)
               }}
             >
-              <Trash2 className="size-4 text-[#ef4444]" />
+              <Trash2 className="size-3.5 text-[#ef4444]" />
             </Button>
           </CardAction>
+          <ChevronRight className="absolute right-4 top-1/2 -translate-y-1/2 size-4 text-[#cbd5e1] group-hover:opacity-0 transition-opacity" />
         </CardHeader>
       </Card>
     )
@@ -74,52 +79,52 @@ export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate 
   const favicon = getFavicon(bookmark.url)
 
   return (
-    <Card className="group hover:shadow-xl hover:shadow-[#6366f1]/10 hover:border-[#6366f1]/30 transition-all duration-300 bg-white border-[#e2e8f0]/80 rounded-2xl overflow-hidden">
+    <Card className="group h-full hover:shadow-md hover:-translate-y-0.5 hover:border-[#c7d2fe] transition-all duration-200 bg-white rounded-2xl overflow-hidden">
       <CardHeader className="p-5">
-        <div className="flex items-start gap-4 min-w-0 flex-1">
-          <div className="size-14 rounded-2xl bg-gradient-to-br from-[#f1f5f9] to-[#f0f4ff] flex items-center justify-center shrink-0 overflow-hidden group-hover:from-[#f0f4ff] group-hover:to-[#e8eeff] transition-all duration-300 shadow-sm">
+        <div className="flex items-start gap-3.5 min-w-0 flex-1">
+          <div className="size-12 rounded-xl bg-[#f8fafc] border border-[#e2e8f0] flex items-center justify-center shrink-0 overflow-hidden">
             {favicon ? (
               <img
                 src={favicon}
                 alt=""
-                className="size-7"
+                className="size-6"
                 onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                   e.currentTarget.style.display = 'none'
                   e.currentTarget.nextElementSibling?.classList.remove('hidden')
                 }}
               />
             ) : null}
-            <Globe className={`size-7 text-[#94a3b8] ${favicon ? 'hidden' : ''}`} />
+            <Globe className={`size-6 text-[#94a3b8] ${favicon ? 'hidden' : ''}`} />
           </div>
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 pt-0.5">
             <a
               href={bookmark.url}
               target="_blank"
               rel="noopener noreferrer"
               className="block group/link"
             >
-              <h3 className="text-[14px] font-bold text-[#0f172a] leading-snug line-clamp-2 group-hover/link:text-[#6366f1] transition-colors">
+              <h3 className="text-[14px] font-semibold text-[#0f172a] leading-snug line-clamp-2 group-hover/link:text-[#4f46e5] transition-colors">
                 {bookmark.title || bookmark.url}
               </h3>
             </a>
           </div>
         </div>
-        <CardAction className="gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <CardAction className="gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150">
           <Button
             variant="ghost"
             size="icon"
-            className="size-8 rounded-xl hover:bg-[#f1f5f9]"
+            className="size-7 rounded-lg hover:bg-[#f1f5f9]"
             onClick={() => onEdit(bookmark)}
           >
-            <Pencil className="size-4 text-[#64748b]" />
+            <Pencil className="size-3.5 text-[#64748b]" />
           </Button>
           <Button
             variant="ghost"
             size="icon"
-            className="size-8 rounded-xl hover:bg-red-50"
+            className="size-7 rounded-lg hover:bg-red-50"
             onClick={() => onDelete(bookmark.id)}
           >
-            <Trash2 className="size-4 text-[#ef4444]" />
+            <Trash2 className="size-3.5 text-[#ef4444]" />
           </Button>
         </CardAction>
       </CardHeader>
@@ -131,7 +136,7 @@ export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate 
             </p>
           )}
           <p
-            className="text-[11px] text-[#94a3b8] break-words line-clamp-1 font-mono bg-[#f8fafc] px-2.5 py-1.5 rounded-lg"
+            className="text-[11px] text-[#94a3b8] break-words line-clamp-1 font-mono bg-[#f8fafc] border border-[#e2e8f0]/70 px-2.5 py-1.5 rounded-lg"
             title={bookmark.url}
           >
             {bookmark.url}

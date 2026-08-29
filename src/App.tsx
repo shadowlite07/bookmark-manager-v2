@@ -5,6 +5,7 @@ import { BookmarkCard } from '@/components/bookmark-card'
 import { BookmarkForm } from '@/components/bookmark-form'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { folderAccent } from '@/lib/utils'
 import {
   ChevronRight,
   ChevronDown,
@@ -203,11 +204,11 @@ function App() {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 overflow-y-auto px-3 py-3 text-[13px] min-h-0">
-          <p className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#94a3b8]">
+        <nav className="flex-1 overflow-y-auto px-3 py-4 text-[13px] min-h-0">
+          <p className="px-3 pb-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[#94a3b8]">
             Quick Access
           </p>
-          <div className="space-y-0.5">
+          <div className="space-y-1">
             <button
               className={`flex items-center gap-2.5 w-full px-3 py-2.5 rounded-xl text-left transition-all duration-200 ${
                 currentFolderId === '1'
@@ -232,9 +233,9 @@ function App() {
             </button>
           </div>
 
-          <div className="my-4 mx-3 border-t border-[#e2e8f0]/60" />
+          <div className="my-5 mx-3 border-t border-[#e2e8f0]/60" />
 
-          <p className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#94a3b8]">
+          <p className="px-3 pb-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[#94a3b8]">
             Folders
           </p>
           {sidebarFolders.length === 0 && (
@@ -245,7 +246,7 @@ function App() {
               <p className="text-[12px] text-[#94a3b8]">No custom folders yet</p>
             </div>
           )}
-          <div className="space-y-0.5">
+          <div className="space-y-1">
             {sidebarFolders.map((folder) => (
               <FolderTreeItem
                 key={folder.id}
@@ -362,7 +363,7 @@ function App() {
         </div>
 
         {/* Grid */}
-        <div className="flex-1 overflow-y-auto p-8">
+        <div className="flex-1 overflow-y-auto px-8 py-7">
           {currentItems.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center">
               <div className="size-20 rounded-2xl bg-gradient-to-br from-[#f1f5f9] to-[#f0f4ff] flex items-center justify-center mb-5 shadow-inner">
@@ -392,7 +393,7 @@ function App() {
               )}
             </div>
           ) : (
-            <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start max-w-[1600px]">
               {currentItems.map((item) => (
                 <BookmarkCard
                   key={item.id}
@@ -445,13 +446,14 @@ function FolderTreeItem({
   const isExpanded = expandedFolders.has(folder.id)
   const childFolders = getChildFolders(folder.id)
   const hasChildren = childFolders.length > 0
+  const accent = folderAccent(folder.id)
 
   return (
     <div>
       <button
         className={`flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-left transition-all duration-200 ${
           isActive
-            ? 'bg-gradient-to-r from-[#6366f1] to-[#818cf8] text-white shadow-lg shadow-[#6366f1]/25'
+            ? 'bg-gradient-to-r from-[#6366f1] to-[#818cf8] text-white shadow-md shadow-[#6366f1]/20'
             : 'text-[#334155] hover:bg-[#f1f5f9] hover:text-[#0f172a]'
         }`}
         style={{ paddingLeft: `${depth * 16 + 12}px` }}
@@ -481,7 +483,7 @@ function FolderTreeItem({
         {isActive ? (
           <FolderOpen className="size-4 shrink-0" />
         ) : (
-          <Folder className="size-4 shrink-0" />
+          <Folder className="size-4 shrink-0" style={{ color: accent.icon }} />
         )}
         <span className="truncate font-medium">{folder.title || 'Untitled'}</span>
       </button>
