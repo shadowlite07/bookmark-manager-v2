@@ -14,9 +14,9 @@ import { IconPicker } from '@/components/icon-picker'
 interface BookmarkFormProps {
   open: boolean
   onOpenChange: (open: boolean) => void
-  onSaveBookmark: (data: { title: string; url: string; parentId?: string }) => void
+  onSaveBookmark: (data: { title: string; url: string; parentId?: string }) => Promise<string | void>
   onSaveMetadata?: (id: string, metadata: BookmarkMetadata) => void
-  onSaveFolder?: (parentId: string, title: string) => void
+  onSaveFolder?: (parentId: string, title: string) => Promise<string | void>
   folders: Bookmark[]
   currentFolderId: string
   initialData?: Bookmark
@@ -54,28 +54,37 @@ export function BookmarkForm({
     }
   }, [open, initialData, initialMetadata, currentFolderId])
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
 
     if (mode === 'folder') {
-      onSaveFolder?.(parentId, title)
-      if (initialData && onSaveMetadata) {
-        onSaveMetadata(initialData.id, {
-          tags: initialMetadata?.tags ?? [],
-          description: initialMetadata?.description ?? '',
-          icon: icon || undefined,
-        })
+      const id = await onSaveFolder?.(parentId, title)
+      if (onSaveMetadata) {
+        const targetId = id || initialData?.id
+        if (targetId) {
+          onSaveMetadata(targetId, {
+            tags: initialMetadata?.tags ?? [],
+            description: initialMetadata?.description ?? '',
+            icon: icon || undefined,
+            favorite: initialMetadata?.favorite,
+          })
+        }
       }
     } else {
-      onSaveBookmark({ title, url, parentId })
-      if (initialData && onSaveMetadata) {
-        onSaveMetadata(initialData.id, {
-          tags: tags
-            .split(',')
-            .map((t) => t.trim())
-            .filter(Boolean),
-          description,
-        })
+      const id = await onSaveBookmark({ title, url, parentId })
+      if (onSaveMetadata) {
+        const targetId = id || initialData?.id
+        if (targetId) {
+          onSaveMetadata(targetId, {
+            tags: tags
+              .split(',')
+              .map((t) => t.trim())
+              .filter(Boolean),
+            description,
+            icon: initialMetadata?.icon,
+            favorite: initialMetadata?.favorite,
+          })
+        }
       }
     }
 

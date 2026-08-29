@@ -28,7 +28,7 @@ export function useBrowserBookmarks() {
     const tree = (await sendMessage({ type: 'GET_BOOKMARK_TREE' })) as Bookmark[] | null
     if (tree) {
       setBookmarks(tree)
-      const ids = tree.filter((b) => !b.isFolder).map((b) => b.id)
+      const ids = tree.map((b) => b.id)
       if (ids.length > 0) {
         const meta = (await sendMessage({
           type: 'GET_METADATA',
@@ -78,12 +78,12 @@ export function useBrowserBookmarks() {
   const addBookmark = useCallback(
     async (data: { title: string; url: string; parentId?: string }) => {
       const parent = data.parentId ?? '1'
-      await sendMessage({
+      const node = (await sendMessage({
         type: 'CREATE_BOOKMARK',
         payload: { parentId: parent, title: data.title, url: data.url },
-      })
-      // Re-fetch immediately so UI updates without reload
+      })) as { id: string } | null
       await fetchBookmarks()
+      return node?.id
     },
     [fetchBookmarks]
   )
@@ -112,11 +112,12 @@ export function useBrowserBookmarks() {
 
   const createFolder = useCallback(
     async (parentId: string, title: string) => {
-      await sendMessage({
+      const node = (await sendMessage({
         type: 'CREATE_FOLDER',
         payload: { parentId, title },
-      })
+      })) as { id: string } | null
       await fetchBookmarks()
+      return node?.id
     },
     [fetchBookmarks]
   )

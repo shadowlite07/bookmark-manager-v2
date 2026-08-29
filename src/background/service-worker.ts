@@ -41,6 +41,8 @@ interface FlatBookmark {
 interface BookmarkMetadata {
   tags: string[]
   description: string
+  icon?: string
+  favorite?: boolean
 }
 
 function flattenTree(

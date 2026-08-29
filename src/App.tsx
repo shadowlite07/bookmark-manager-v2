@@ -129,26 +129,32 @@ function App() {
     setFormOpen(true)
   }
 
-  function handleSaveBookmark(data: { title: string; url: string; parentId?: string }) {
+  async function handleSaveBookmark(data: { title: string; url: string; parentId?: string }) {
     if (editingItem) {
-      updateBookmark(editingItem.id, { title: data.title, url: data.url })
+      await updateBookmark(editingItem.id, { title: data.title, url: data.url })
+      setEditingItem(undefined)
+      return editingItem.id
     } else {
-      addBookmark({ title: data.title, url: data.url, parentId: data.parentId })
+      const id = await addBookmark({ title: data.title, url: data.url, parentId: data.parentId })
+      setEditingItem(undefined)
+      return id
     }
-    setEditingItem(undefined)
   }
 
   function handleSaveMetadata(id: string, meta: BookmarkMetadata) {
     setMeta(id, meta)
   }
 
-  function handleSaveFolder(parentId: string, title: string) {
+  async function handleSaveFolder(parentId: string, title: string) {
     if (editingItem) {
-      updateBookmark(editingItem.id, { title })
+      await updateBookmark(editingItem.id, { title })
+      setEditingItem(undefined)
+      return editingItem.id
     } else {
-      createFolder(parentId, title)
+      const id = await createFolder(parentId, title)
+      setEditingItem(undefined)
+      return id
     }
-    setEditingItem(undefined)
   }
 
   function handleOpenChange(open: boolean) {
