@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, useRef } from 'react'
 import type { Bookmark, SortOption, BookmarkMetadata } from '@/types/bookmark'
 import { useBrowserBookmarks } from '@/hooks/use-browser-bookmarks'
 import { BookmarkCard } from '@/components/bookmark-card'
@@ -10,6 +10,7 @@ import { getIconByName } from '@/components/icon-picker'
 import {
   ChevronRight,
   ChevronDown,
+  Download,
   Folder,
   FolderOpen,
   FolderPlus,
@@ -18,6 +19,7 @@ import {
   Plus,
   Search,
   Star,
+  Upload,
 } from 'lucide-react'
 
 function App() {
@@ -42,6 +44,68 @@ function App() {
   const [editingItem, setEditingItem] = useState<Bookmark | undefined>()
   const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set(['1', '2']))
   const [sidebarSearch, setSidebarSearch] = useState('')
+  const importFileRef = useRef<HTMLInputElement>(null)
+
+  function handleExport() {
+    const data = {
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      bookmarks: bookmarks.map((b) => ({
+        ...b,
+        metadata: metadata[b.id],
+      })),
+    }
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `bookmarks-${new Date().toISOString().slice(0, 10)}.json`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  async function handleImportFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (!file) return
+    e.target.value = ''
+
+    try {
+      const text = await file.text()
+      const data = JSON.parse(text)
+      if (!data.bookmarks || !Array.isArray(data.bookmarks)) {
+        alert('Invalid bookmark file format')
+        return
+      }
+
+      let imported = 0
+      for (const item of data.bookmarks) {
+        if (item.isFolder) {
+          const existing = bookmarks.find((b) => b.id === item.id)
+          if (!existing) {
+            await createFolder(item.parentId || '1', item.title)
+            imported++
+          }
+        } else {
+          const existing = bookmarks.find((b) => b.id === item.id)
+          if (!existing) {
+            await addBookmark({ title: item.title, url: item.url, parentId: item.parentId || '1' })
+            imported++
+          }
+        }
+        if (item.metadata) {
+          await setMeta(item.id, {
+            tags: item.metadata.tags ?? [],
+            description: item.metadata.description ?? '',
+            icon: item.metadata.icon,
+            favorite: item.metadata.favorite,
+          })
+        }
+      }
+      alert(`Imported ${imported} new bookmarks`)
+    } catch {
+      alert('Failed to parse bookmark file')
+    }
+  }
 
   const breadcrumbs = useMemo(() => {
     const path: Bookmark[] = []
@@ -58,7 +122,7 @@ function App() {
     let items: Bookmark[]
 
     if (currentFolderId === 'favorites') {
-      items = bookmarks.filter((b) => !b.isFolder && metadata[b.id]?.favorite)
+      items = bookmarks.filter((b) => metadata[b.id]?.favorite)
     } else {
       items = getChildren(currentFolderId)
     }
@@ -74,26 +138,19 @@ function App() {
       )
     }
 
-    if (currentFolderId !== 'favorites') {
-      const foldersList = items.filter((b) => b.isFolder)
-      const bookmarksList = items.filter((b) => !b.isFolder)
-
-      const sortFn = (a: Bookmark, b: Bookmark) => {
-        switch (sort) {
-          case 'newest': return (b.dateAdded ?? 0) - (a.dateAdded ?? 0)
-          case 'oldest': return (a.dateAdded ?? 0) - (b.dateAdded ?? 0)
-          case 'alpha': return a.title.localeCompare(b.title)
-          case 'alpha-reverse': return b.title.localeCompare(a.title)
-          default: return 0
-        }
+    const sortFn = (a: Bookmark, b: Bookmark) => {
+      switch (sort) {
+        case 'newest': return (b.dateAdded ?? 0) - (a.dateAdded ?? 0)
+        case 'oldest': return (a.dateAdded ?? 0) - (b.dateAdded ?? 0)
+        case 'alpha': return a.title.localeCompare(b.title)
+        case 'alpha-reverse': return b.title.localeCompare(a.title)
+        default: return 0
       }
-
-      foldersList.sort(sortFn)
-      bookmarksList.sort(sortFn)
-      return [...foldersList, ...bookmarksList]
     }
 
-    return items
+    const foldersList = items.filter((b) => b.isFolder).sort(sortFn)
+    const bookmarksList = items.filter((b) => !b.isFolder).sort(sortFn)
+    return [...foldersList, ...bookmarksList]
   }, [bookmarks, currentFolderId, getChildren, metadata, search, sort])
 
   const sidebarFolders = useMemo(() => {
@@ -254,6 +311,7 @@ function App() {
                 depth={0}
                 onNavigate={handleNavigate}
                 onToggle={toggleFolderExpand}
+                onToggleFavorite={handleToggleFavorite}
                 expandedFolders={expandedFolders}
                 getChildFolders={getChildFolders}
               />
@@ -270,13 +328,42 @@ function App() {
         <div className="shrink-0 bg-white/80 backdrop-blur-sm border-b border-[#e2e8f0]/80 px-8 py-5">
           <div className="flex items-center justify-between gap-4 mb-5">
             <div className="min-w-0 flex-1">
-              <h1 className="text-[22px] font-bold text-[#0f172a] tracking-tight">
-                {currentFolderId === 'favorites'
-                  ? 'Favorites'
-                  : breadcrumbs.length > 0
-                    ? breadcrumbs[breadcrumbs.length - 1].title || 'Untitled'
-                    : 'Bookmarks Bar'}
-              </h1>
+              <div className="flex items-center gap-3">
+                <h1 className="text-[22px] font-bold text-[#0f172a] tracking-tight">
+                  {currentFolderId === 'favorites'
+                    ? 'Favorites'
+                    : breadcrumbs.length > 0
+                      ? breadcrumbs[breadcrumbs.length - 1].title || 'Untitled'
+                      : 'Bookmarks Bar'}
+                </h1>
+                <div className="flex items-center gap-1">
+                  <input
+                    type="file"
+                    ref={importFileRef}
+                    className="hidden"
+                    accept=".json"
+                    onChange={handleImportFile}
+                  />
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="size-8 rounded-lg text-[#94a3b8] hover:text-[#6366f1] hover:bg-[#f1f5f9]"
+                    title="Export bookmarks"
+                    onClick={handleExport}
+                  >
+                    <Download className="size-4" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="size-8 rounded-lg text-[#94a3b8] hover:text-[#6366f1] hover:bg-[#f1f5f9]"
+                    title="Import bookmarks"
+                    onClick={() => importFileRef.current?.click()}
+                  >
+                    <Upload className="size-4" />
+                  </Button>
+                </div>
+              </div>
               <nav className="flex items-center gap-1 text-[12px] text-[#94a3b8] mt-1.5">
                 <button
                   className="hover:text-[#6366f1] transition-colors font-medium"
@@ -480,6 +567,7 @@ function FolderTreeItem({
   depth,
   onNavigate,
   onToggle,
+  onToggleFavorite,
   expandedFolders,
   getChildFolders,
 }: {
@@ -489,6 +577,7 @@ function FolderTreeItem({
   depth: number
   onNavigate: (id: string) => void
   onToggle: (id: string) => void
+  onToggleFavorite: (id: string, favorite: boolean) => void
   expandedFolders: Set<string>
   getChildFolders: (parentId: string) => Bookmark[]
 }) {
@@ -498,6 +587,7 @@ function FolderTreeItem({
   const hasChildren = childFolders.length > 0
   const accent = folderAccent(folder.id)
   const FolderIcon = getIconByName(allMetadata[folder.id]?.icon)
+  const isFavorite = !!allMetadata[folder.id]?.favorite
 
   return (
     <div>
@@ -536,7 +626,25 @@ function FolderTreeItem({
         ) : (
           <FolderIcon className="size-4 shrink-0" style={{ color: accent.icon }} />
         )}
-        <span className="truncate font-medium">{folder.title || 'Untitled'}</span>
+        <span className="truncate font-medium flex-1">{folder.title || 'Untitled'}</span>
+        <span
+          className={`shrink-0 cursor-pointer rounded-md p-0.5 transition-all ${
+            isActive ? 'hover:bg-white/20' : 'hover:bg-[#e2e8f0] opacity-0 group-hover:opacity-100'
+          }`}
+          style={{ opacity: isFavorite ? 1 : undefined }}
+          onClick={(e: React.MouseEvent) => {
+            e.stopPropagation()
+            onToggleFavorite(folder.id, !isFavorite)
+          }}
+        >
+          <Heart
+            className={`size-3.5 transition-colors ${
+              isFavorite
+                ? 'fill-[#ef4444] text-[#ef4444]'
+                : isActive ? 'text-white/50 hover:text-[#ef4444]' : 'text-[#cbd5e1] hover:text-[#ef4444]'
+            }`}
+          />
+        </span>
       </button>
       {isExpanded &&
         childFolders.map((child) => (
@@ -548,6 +656,7 @@ function FolderTreeItem({
             depth={depth + 1}
             onNavigate={onNavigate}
             onToggle={onToggle}
+            onToggleFavorite={onToggleFavorite}
             expandedFolders={expandedFolders}
             getChildFolders={getChildFolders}
           />
