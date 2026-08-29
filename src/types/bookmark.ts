@@ -12,6 +12,7 @@ export interface Bookmark {
 export interface BookmarkMetadata {
   tags: string[]
   description: string
+  icon?: string
 }
 
 export type SortOption = 'newest' | 'oldest' | 'alpha' | 'alpha-reverse'

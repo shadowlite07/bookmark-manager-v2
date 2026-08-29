@@ -9,6 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
+import { IconPicker } from '@/components/icon-picker'
 
 interface BookmarkFormProps {
   open: boolean
@@ -40,6 +41,7 @@ export function BookmarkForm({
   const [description, setDescription] = useState('')
   const [tags, setTags] = useState('')
   const [parentId, setParentId] = useState(currentFolderId)
+  const [icon, setIcon] = useState('')
 
   useEffect(() => {
     if (open) {
@@ -48,6 +50,7 @@ export function BookmarkForm({
       setDescription(initialMetadata?.description ?? '')
       setTags(initialMetadata?.tags?.join(', ') ?? '')
       setParentId(initialData?.parentId ?? currentFolderId)
+      setIcon(initialMetadata?.icon ?? '')
     }
   }, [open, initialData, initialMetadata, currentFolderId])
 
@@ -56,6 +59,13 @@ export function BookmarkForm({
 
     if (mode === 'folder') {
       onSaveFolder?.(parentId, title)
+      if (initialData && onSaveMetadata) {
+        onSaveMetadata(initialData.id, {
+          tags: initialMetadata?.tags ?? [],
+          description: initialMetadata?.description ?? '',
+          icon: icon || undefined,
+        })
+      }
     } else {
       onSaveBookmark({ title, url, parentId })
       if (initialData && onSaveMetadata) {
@@ -73,6 +83,7 @@ export function BookmarkForm({
     setUrl('')
     setDescription('')
     setTags('')
+    setIcon('')
     onOpenChange(false)
   }
 
@@ -93,6 +104,15 @@ export function BookmarkForm({
             </DialogDescription>
           </DialogHeader>
           <div className="px-6 pb-4 space-y-4">
+            {mode === 'folder' && (
+              <div className="space-y-2">
+                <label className="text-[12px] font-bold text-[#334155] uppercase tracking-wide">
+                  Icon
+                </label>
+                <IconPicker value={icon} onChange={setIcon} />
+              </div>
+            )}
+
             <div className="space-y-2">
               <label htmlFor="title" className="text-[12px] font-bold text-[#334155] uppercase tracking-wide">
                 Name

@@ -3,7 +3,8 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardAction, CardContent, CardHeader } from '@/components/ui/card'
 import { folderAccent } from '@/lib/utils'
-import { Folder, Pencil, Trash2, Globe, ChevronRight } from 'lucide-react'
+import { Pencil, Trash2, Globe, ChevronRight } from 'lucide-react'
+import { getIconByName } from '@/components/icon-picker'
 
 interface BookmarkCardProps {
   bookmark: Bookmark
@@ -25,6 +26,7 @@ function getFavicon(url: string) {
 export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate }: BookmarkCardProps) {
   if (bookmark.isFolder) {
     const accent = folderAccent(bookmark.id)
+    const FolderIcon = getIconByName(metadata?.icon)
     return (
       <Card
         className="group relative h-full cursor-pointer hover:shadow-md hover:-translate-y-0.5 hover:border-[#c7d2fe] transition-all duration-200 bg-white rounded-2xl overflow-hidden"
@@ -35,7 +37,7 @@ export function BookmarkCard({ bookmark, metadata, onEdit, onDelete, onNavigate 
             <div
               className={`size-12 rounded-xl bg-gradient-to-br ${accent.bg} flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-105`}
             >
-              <Folder className="size-6" style={{ color: accent.icon }} strokeWidth={2} />
+              <FolderIcon className="size-6" style={{ color: accent.icon }} strokeWidth={2} />
             </div>
             <div className="flex-1 min-w-0 pt-0.5">
               <h3 className="text-[14px] font-semibold text-[#0f172a] line-clamp-2 leading-snug group-hover:text-[#4f46e5] transition-colors pr-6">

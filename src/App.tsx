@@ -6,6 +6,7 @@ import { BookmarkForm } from '@/components/bookmark-form'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { folderAccent } from '@/lib/utils'
+import { getIconByName } from '@/components/icon-picker'
 import {
   ChevronRight,
   ChevronDown,
@@ -251,6 +252,7 @@ function App() {
               <FolderTreeItem
                 key={folder.id}
                 folder={folder}
+                allMetadata={metadata}
                 currentFolderId={currentFolderId}
                 depth={0}
                 onNavigate={handleNavigate}
@@ -427,6 +429,7 @@ function App() {
 
 function FolderTreeItem({
   folder,
+  allMetadata,
   currentFolderId,
   depth,
   onNavigate,
@@ -435,6 +438,7 @@ function FolderTreeItem({
   getChildFolders,
 }: {
   folder: Bookmark
+  allMetadata: Record<string, BookmarkMetadata>
   currentFolderId: string
   depth: number
   onNavigate: (id: string) => void
@@ -447,6 +451,7 @@ function FolderTreeItem({
   const childFolders = getChildFolders(folder.id)
   const hasChildren = childFolders.length > 0
   const accent = folderAccent(folder.id)
+  const FolderIcon = getIconByName(allMetadata[folder.id]?.icon)
 
   return (
     <div>
@@ -483,7 +488,7 @@ function FolderTreeItem({
         {isActive ? (
           <FolderOpen className="size-4 shrink-0" />
         ) : (
-          <Folder className="size-4 shrink-0" style={{ color: accent.icon }} />
+          <FolderIcon className="size-4 shrink-0" style={{ color: accent.icon }} />
         )}
         <span className="truncate font-medium">{folder.title || 'Untitled'}</span>
       </button>
@@ -492,6 +497,7 @@ function FolderTreeItem({
           <FolderTreeItem
             key={child.id}
             folder={child}
+            allMetadata={allMetadata}
             currentFolderId={currentFolderId}
             depth={depth + 1}
             onNavigate={onNavigate}
