@@ -19,6 +19,7 @@ import {
   Plus,
   Search,
   Star,
+  Tag,
   Upload,
 } from 'lucide-react'
 
@@ -44,6 +45,8 @@ function App() {
   const [editingItem, setEditingItem] = useState<Bookmark | undefined>()
   const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set(['1', '2']))
   const [sidebarSearch, setSidebarSearch] = useState('')
+  const [filterFavorite, setFilterFavorite] = useState(false)
+  const [filterHasTags, setFilterHasTags] = useState(false)
   const importFileRef = useRef<HTMLInputElement>(null)
 
   function handleExport() {
@@ -138,6 +141,14 @@ function App() {
       )
     }
 
+    if (filterFavorite) {
+      items = items.filter((b) => metadata[b.id]?.favorite)
+    }
+
+    if (filterHasTags) {
+      items = items.filter((b) => !b.isFolder && metadata[b.id]?.tags && metadata[b.id]!.tags!.length > 0)
+    }
+
     const sortFn = (a: Bookmark, b: Bookmark) => {
       switch (sort) {
         case 'newest': return (b.dateAdded ?? 0) - (a.dateAdded ?? 0)
@@ -151,7 +162,7 @@ function App() {
     const foldersList = items.filter((b) => b.isFolder).sort(sortFn)
     const bookmarksList = items.filter((b) => !b.isFolder).sort(sortFn)
     return [...foldersList, ...bookmarksList]
-  }, [bookmarks, currentFolderId, getChildren, metadata, search, sort])
+  }, [bookmarks, currentFolderId, getChildren, metadata, search, sort, filterFavorite, filterHasTags])
 
   const sidebarFolders = useMemo(() => {
     let filtered = bookmarks.filter((b) => b.parentId === '0' && b.isFolder)
@@ -222,6 +233,8 @@ function App() {
   function handleNavigate(folderId: string) {
     setCurrentFolderId(folderId)
     setSearch('')
+    setFilterFavorite(false)
+    setFilterHasTags(false)
   }
 
   function handleToggleFavorite(id: string, favorite: boolean) {
@@ -447,12 +460,34 @@ function App() {
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-[#94a3b8] pointer-events-none" />
               <input
                 type="text"
-                placeholder="Search bookmarks..."
+                placeholder={currentFolderId === 'favorites' ? 'Search favorites...' : 'Search bookmarks...'}
                 value={search}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
                 className="w-full h-11 rounded-xl bg-[#f1f5f9]/80 border border-transparent pl-10 pr-4 text-[13px] text-[#0f172a] placeholder-[#94a3b8] outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:bg-white focus:border-[#6366f1]/30 transition-all duration-200"
               />
             </div>
+            <button
+              onClick={() => setFilterFavorite((f) => !f)}
+              className={`h-11 px-4 rounded-xl text-[13px] font-medium flex items-center gap-2 border transition-all duration-200 ${
+                filterFavorite
+                  ? 'bg-[#ef4444]/10 border-[#ef4444]/30 text-[#ef4444]'
+                  : 'bg-white border-[#e2e8f0] text-[#64748b] hover:border-[#ef4444]/30 hover:text-[#ef4444]'
+              }`}
+            >
+              <Heart className={`size-3.5 ${filterFavorite ? 'fill-[#ef4444]' : ''}`} />
+              Favourite
+            </button>
+            <button
+              onClick={() => setFilterHasTags((f) => !f)}
+              className={`h-11 px-4 rounded-xl text-[13px] font-medium flex items-center gap-2 border transition-all duration-200 ${
+                filterHasTags
+                  ? 'bg-[#6366f1]/10 border-[#6366f1]/30 text-[#6366f1]'
+                  : 'bg-white border-[#e2e8f0] text-[#64748b] hover:border-[#6366f1]/30 hover:text-[#6366f1]'
+              }`}
+            >
+              <Tag className="size-3.5" />
+              Tags
+            </button>
             <select
               value={sort}
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSort(e.target.value as SortOption)}
@@ -498,15 +533,15 @@ function App() {
                 )}
               </div>
               <p className="text-[#334155] font-semibold text-[16px]">
-                {search
+                {search || filterFavorite || filterHasTags
                   ? 'No results found'
                   : currentFolderId === 'favorites'
                     ? 'No favorites yet'
                     : 'This folder is empty'}
               </p>
               <p className="text-[#94a3b8] text-[13px] mt-1.5 max-w-[300px] leading-relaxed">
-                {search
-                  ? 'Try adjusting your search terms or check a different folder'
+                {search || filterFavorite || filterHasTags
+                  ? 'Try adjusting your search terms or filters'
                   : currentFolderId === 'favorites'
                     ? 'Click the heart icon on any bookmark to add it to favorites'
                     : 'Add bookmarks or create folders to organize your links'}
