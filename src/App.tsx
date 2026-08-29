@@ -150,30 +150,40 @@ function App() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-[#f8fafc]">
-        <div className="flex flex-col items-center gap-3">
-          <div className="size-8 border-3 border-[#6366f1] border-t-transparent rounded-full animate-spin" />
-          <p className="text-sm text-[#64748b]">Loading bookmarks...</p>
+      <div className="flex items-center justify-center h-screen bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#f0f4ff]">
+        <div className="flex flex-col items-center gap-4">
+          <div className="relative">
+            <div className="size-12 border-3 border-[#e2e8f0] border-t-[#6366f1] rounded-full animate-spin" />
+            <div className="absolute inset-0 size-12 border-3 border-transparent border-b-[#818cf8] rounded-full animate-spin" style={{ animationDuration: '1.5s' }} />
+          </div>
+          <div className="text-center">
+            <p className="text-sm font-medium text-[#334155]">Loading bookmarks</p>
+            <p className="text-xs text-[#94a3b8] mt-0.5">Syncing with your browser...</p>
+          </div>
         </div>
       </div>
     )
   }
 
   const bookmarkCount = currentItems.filter((b) => !b.isFolder).length
+  const folderCount = currentItems.filter((b) => b.isFolder).length
 
   return (
-    <div className="flex h-screen bg-[#f8fafc] overflow-hidden gap-4 p-4">
+    <div className="flex h-screen bg-gradient-to-br from-[#f8fafc] via-[#f8fafc] to-[#f0f4ff]/50 overflow-hidden">
       {/* ===== SIDEBAR ===== */}
-      <aside className="w-[260px] shrink-0 bg-white border-r border-[#e2e8f0] flex flex-col">
+      <aside className="w-[280px] shrink-0 bg-white/80 backdrop-blur-sm border-r border-[#e2e8f0]/80 flex flex-col shadow-sm">
         {/* Logo area */}
-        <div className="px-5 py-4 border-b border-[#e2e8f0]">
-          <div className="flex items-center gap-2.5">
-            <div className="size-8 rounded-lg bg-[#6366f1] flex items-center justify-center">
-              <Folder className="size-4 text-white" />
+        <div className="px-5 py-5 border-b border-[#e2e8f0]/80">
+          <div className="flex items-center gap-3">
+            <div className="size-10 rounded-xl bg-gradient-to-br from-[#6366f1] to-[#818cf8] flex items-center justify-center shadow-lg shadow-[#6366f1]/20">
+              <Folder className="size-5 text-white" />
             </div>
             <div>
-              <h1 className="text-sm font-semibold text-[#0f172a]">Bookmark Manager</h1>
-              <p className="text-[11px] text-[#94a3b8]">Synced with Brave</p>
+              <h1 className="text-[15px] font-bold text-[#0f172a] tracking-tight">Bookmark Manager</h1>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <div className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <p className="text-[11px] text-[#94a3b8] font-medium">Synced with Brave</p>
+              </div>
             </div>
           </div>
         </div>
@@ -187,76 +197,83 @@ function App() {
               placeholder="Search folders..."
               value={sidebarSearch}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSidebarSearch(e.target.value)}
-              className="w-full h-9 rounded-lg bg-[#f1f5f9] border-0 pl-9 pr-3 text-[13px] text-[#0f172a] placeholder-[#94a3b8] outline-none focus:ring-2 focus:ring-[#6366f1]/30 focus:bg-white transition-all"
+              className="w-full h-9 rounded-xl bg-[#f1f5f9]/80 border border-transparent pl-9 pr-3 text-[13px] text-[#0f172a] placeholder-[#94a3b8] outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:bg-white focus:border-[#6366f1]/30 transition-all duration-200"
             />
           </div>
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 overflow-y-auto px-3 py-2 text-[13px] min-h-0">
-          <p className="px-2 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-[#94a3b8]">
+        <nav className="flex-1 overflow-y-auto px-3 py-3 text-[13px] min-h-0">
+          <p className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#94a3b8]">
             Quick Access
           </p>
-          <button
-            className={`flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-left transition-all ${
-              currentFolderId === '1'
-                ? 'bg-[#6366f1] text-white shadow-md shadow-[#6366f1]/25'
-                : 'text-[#334155] hover:bg-[#f1f5f9]'
-            }`}
-            onClick={() => handleNavigate('1')}
-          >
-            <Home className="size-4 shrink-0" />
-            Bookmarks Bar
-          </button>
-          <button
-            className={`flex items-center gap-2.5 w-full px-3 py-2 rounded-lg text-left transition-all ${
-              currentFolderId === '2'
-                ? 'bg-[#6366f1] text-white shadow-md shadow-[#6366f1]/25'
-                : 'text-[#334155] hover:bg-[#f1f5f9]'
-            }`}
-            onClick={() => handleNavigate('2')}
-          >
-            <Star className="size-4 shrink-0" />
-            Other Bookmarks
-          </button>
+          <div className="space-y-0.5">
+            <button
+              className={`flex items-center gap-2.5 w-full px-3 py-2.5 rounded-xl text-left transition-all duration-200 ${
+                currentFolderId === '1'
+                  ? 'bg-gradient-to-r from-[#6366f1] to-[#818cf8] text-white shadow-lg shadow-[#6366f1]/25'
+                  : 'text-[#334155] hover:bg-[#f1f5f9] hover:text-[#0f172a]'
+              }`}
+              onClick={() => handleNavigate('1')}
+            >
+              <Home className="size-4 shrink-0" />
+              <span className="font-medium">Bookmarks Bar</span>
+            </button>
+            <button
+              className={`flex items-center gap-2.5 w-full px-3 py-2.5 rounded-xl text-left transition-all duration-200 ${
+                currentFolderId === '2'
+                  ? 'bg-gradient-to-r from-[#6366f1] to-[#818cf8] text-white shadow-lg shadow-[#6366f1]/25'
+                  : 'text-[#334155] hover:bg-[#f1f5f9] hover:text-[#0f172a]'
+              }`}
+              onClick={() => handleNavigate('2')}
+            >
+              <Star className="size-4 shrink-0" />
+              <span className="font-medium">Other Bookmarks</span>
+            </button>
+          </div>
 
-          <div className="my-3 border-t border-[#e2e8f0]" />
+          <div className="my-4 mx-3 border-t border-[#e2e8f0]/60" />
 
-          <p className="px-2 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-[#94a3b8]">
+          <p className="px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] text-[#94a3b8]">
             Folders
           </p>
           {sidebarFolders.length === 0 && (
-            <p className="px-3 py-4 text-[12px] text-[#94a3b8] text-center">
-              No custom folders yet
-            </p>
+            <div className="px-3 py-6 text-center">
+              <div className="size-10 rounded-xl bg-[#f1f5f9] flex items-center justify-center mx-auto mb-2">
+                <Folder className="size-5 text-[#cbd5e1]" />
+              </div>
+              <p className="text-[12px] text-[#94a3b8]">No custom folders yet</p>
+            </div>
           )}
-          {sidebarFolders.map((folder) => (
-            <FolderTreeItem
-              key={folder.id}
-              folder={folder}
-              currentFolderId={currentFolderId}
-              depth={0}
-              onNavigate={handleNavigate}
-              onToggle={toggleFolderExpand}
-              expandedFolders={expandedFolders}
-              getChildFolders={getChildFolders}
-            />
-          ))}
+          <div className="space-y-0.5">
+            {sidebarFolders.map((folder) => (
+              <FolderTreeItem
+                key={folder.id}
+                folder={folder}
+                currentFolderId={currentFolderId}
+                depth={0}
+                onNavigate={handleNavigate}
+                onToggle={toggleFolderExpand}
+                expandedFolders={expandedFolders}
+                getChildFolders={getChildFolders}
+              />
+            ))}
+          </div>
         </nav>
 
         {/* Footer */}
-        <div className="p-3 border-t border-[#e2e8f0] shrink-0">
+        <div className="p-3 border-t border-[#e2e8f0]/80 shrink-0 bg-white/50">
           <Button
             variant="outline"
             size="sm"
-            className="w-full justify-start gap-2 h-9 border-[#e2e8f0] text-[#334155] hover:bg-[#f1f5f9]"
+            className="w-full justify-start gap-2.5 h-10 border-[#e2e8f0] text-[#334155] hover:bg-[#f1f5f9] hover:border-[#6366f1]/30 rounded-xl transition-all duration-200"
             onClick={() => {
               setFormMode('folder')
               setFormOpen(true)
             }}
           >
             <FolderPlus className="size-4 shrink-0" />
-            New Folder
+            <span className="font-medium">New Folder</span>
           </Button>
         </div>
       </aside>
@@ -264,26 +281,26 @@ function App() {
       {/* ===== MAIN ===== */}
       <main className="flex-1 flex flex-col overflow-hidden min-w-0">
         {/* Header */}
-        <div className="shrink-0 bg-white border-b border-[#e2e8f0] px-8 py-6">
-          <div className="flex items-center justify-between gap-4 mb-4">
+        <div className="shrink-0 bg-white/80 backdrop-blur-sm border-b border-[#e2e8f0]/80 px-8 py-5">
+          <div className="flex items-center justify-between gap-4 mb-5">
             <div className="min-w-0 flex-1">
-              <h1 className="text-xl font-bold text-[#0f172a] tracking-tight">
+              <h1 className="text-[22px] font-bold text-[#0f172a] tracking-tight">
                 {breadcrumbs.length > 0
                   ? breadcrumbs[breadcrumbs.length - 1].title || 'Untitled'
                   : 'Bookmarks Bar'}
               </h1>
-              <nav className="flex items-center gap-1 text-[12px] text-[#94a3b8] mt-1">
+              <nav className="flex items-center gap-1 text-[12px] text-[#94a3b8] mt-1.5">
                 <button
-                  className="hover:text-[#6366f1] transition-colors"
+                  className="hover:text-[#6366f1] transition-colors font-medium"
                   onClick={() => handleNavigate('1')}
                 >
                   Home
                 </button>
                 {breadcrumbs.map((b) => (
                   <span key={b.id} className="flex items-center gap-1">
-                    <ChevronRight className="size-3" />
+                    <ChevronRight className="size-3 text-[#cbd5e1]" />
                     <button
-                      className="hover:text-[#6366f1] transition-colors truncate max-w-[200px]"
+                      className="hover:text-[#6366f1] transition-colors truncate max-w-[200px] font-medium"
                       onClick={() => handleNavigate(b.id)}
                     >
                       {b.title || 'Untitled'}
@@ -292,29 +309,39 @@ function App() {
                 ))}
               </nav>
             </div>
-            <Badge
-              variant="secondary"
-              className="bg-[#f1f5f9] text-[#64748b] text-[11px] px-2.5 py-1 rounded-full"
-            >
-              {bookmarkCount} {bookmarkCount === 1 ? 'item' : 'items'}
-            </Badge>
+            <div className="flex items-center gap-2">
+              {folderCount > 0 && (
+                <Badge
+                  variant="secondary"
+                  className="bg-[#f0f4ff] text-[#6366f1] text-[11px] px-2.5 py-1 rounded-lg font-medium"
+                >
+                  {folderCount} {folderCount === 1 ? 'folder' : 'folders'}
+                </Badge>
+              )}
+              <Badge
+                variant="secondary"
+                className="bg-[#f1f5f9] text-[#64748b] text-[11px] px-2.5 py-1 rounded-lg font-medium"
+              >
+                {bookmarkCount} {bookmarkCount === 1 ? 'bookmark' : 'bookmarks'}
+              </Badge>
+            </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="relative flex-1 max-w-sm">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-[#94a3b8] pointer-events-none" />
+          <div className="flex items-center gap-3">
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-[#94a3b8] pointer-events-none" />
               <input
                 type="text"
                 placeholder="Search bookmarks..."
                 value={search}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
-                className="w-full h-10 rounded-lg bg-[#f1f5f9] border-0 pl-10 pr-4 text-[13px] text-[#0f172a] placeholder-[#94a3b8] outline-none focus:ring-2 focus:ring-[#6366f1]/30 focus:bg-white transition-all"
+                className="w-full h-11 rounded-xl bg-[#f1f5f9]/80 border border-transparent pl-10 pr-4 text-[13px] text-[#0f172a] placeholder-[#94a3b8] outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:bg-white focus:border-[#6366f1]/30 transition-all duration-200"
               />
             </div>
             <select
               value={sort}
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSort(e.target.value as SortOption)}
-              className="h-10 rounded-lg border border-[#e2e8f0] bg-white px-3 text-[13px] text-[#334155] outline-none focus:ring-2 focus:ring-[#6366f1]/30 cursor-pointer"
+              className="h-11 rounded-xl border border-[#e2e8f0] bg-white px-4 text-[13px] font-medium text-[#334155] outline-none focus:ring-2 focus:ring-[#6366f1]/20 focus:border-[#6366f1]/30 cursor-pointer transition-all duration-200"
             >
               <option value="newest">Newest</option>
               <option value="oldest">Oldest</option>
@@ -326,9 +353,9 @@ function App() {
                 setFormMode('bookmark')
                 setFormOpen(true)
               }}
-              className="h-10 px-4 bg-[#6366f1] hover:bg-[#4f46e5] text-white rounded-lg shadow-sm shadow-[#6366f1]/30 transition-all"
+              className="h-11 px-5 bg-gradient-to-r from-[#6366f1] to-[#818cf8] hover:from-[#4f46e5] hover:to-[#6366f1] text-white rounded-xl shadow-lg shadow-[#6366f1]/25 hover:shadow-xl hover:shadow-[#6366f1]/30 transition-all duration-200 font-medium"
             >
-              <Plus className="size-4 mr-1.5" />
+              <Plus className="size-4 mr-2" strokeWidth={2.5} />
               Add Bookmark
             </Button>
           </div>
@@ -338,26 +365,28 @@ function App() {
         <div className="flex-1 overflow-y-auto p-8">
           {currentItems.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-center">
-              <div className="size-16 rounded-2xl bg-[#f1f5f9] flex items-center justify-center mb-4">
-                <Folder className="size-8 text-[#cbd5e1]" />
+              <div className="size-20 rounded-2xl bg-gradient-to-br from-[#f1f5f9] to-[#f0f4ff] flex items-center justify-center mb-5 shadow-inner">
+                <Folder className="size-10 text-[#cbd5e1]" />
               </div>
-              <p className="text-[#334155] font-medium text-[15px]">
+              <p className="text-[#334155] font-semibold text-[16px]">
                 {search ? 'No results found' : 'This folder is empty'}
               </p>
-              <p className="text-[#94a3b8] text-[13px] mt-1.5 max-w-[280px]">
-                {!search && 'Add bookmarks or create folders to organize your links'}
+              <p className="text-[#94a3b8] text-[13px] mt-1.5 max-w-[300px] leading-relaxed">
+                {search
+                  ? 'Try adjusting your search terms or check a different folder'
+                  : 'Add bookmarks or create folders to organize your links'}
               </p>
               {!search && (
                 <Button
                   variant="outline"
                   size="sm"
-                  className="mt-4 border-[#e2e8f0] text-[#334155]"
+                  className="mt-5 border-[#e2e8f0] text-[#334155] hover:bg-[#f1f5f9] hover:border-[#6366f1]/30 rounded-xl h-10 px-5 font-medium"
                   onClick={() => {
                     setFormMode('bookmark')
                     setFormOpen(true)
                   }}
                 >
-                  <Plus className="size-3.5 mr-1.5" />
+                  <Plus className="size-4 mr-2" />
                   Add your first bookmark
                 </Button>
               )}
@@ -420,10 +449,10 @@ function FolderTreeItem({
   return (
     <div>
       <button
-        className={`flex items-center gap-2 w-full px-3 py-2 rounded-lg text-left transition-all ${
+        className={`flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-left transition-all duration-200 ${
           isActive
-            ? 'bg-[#6366f1] text-white shadow-md shadow-[#6366f1]/25'
-            : 'text-[#334155] hover:bg-[#f1f5f9]'
+            ? 'bg-gradient-to-r from-[#6366f1] to-[#818cf8] text-white shadow-lg shadow-[#6366f1]/25'
+            : 'text-[#334155] hover:bg-[#f1f5f9] hover:text-[#0f172a]'
         }`}
         style={{ paddingLeft: `${depth * 16 + 12}px` }}
         onClick={() => onNavigate(folder.id)}
@@ -436,11 +465,15 @@ function FolderTreeItem({
           }}
         >
           {hasChildren ? (
-            isExpanded ? (
-              <ChevronDown className="size-3.5" />
-            ) : (
-              <ChevronRight className="size-3.5" />
-            )
+            <div className={`size-5 rounded-md flex items-center justify-center transition-colors ${
+              isActive ? 'bg-white/20' : 'hover:bg-[#e2e8f0]'
+            }`}>
+              {isExpanded ? (
+                <ChevronDown className="size-3.5" />
+              ) : (
+                <ChevronRight className="size-3.5" />
+              )}
+            </div>
           ) : (
             <span className="size-3.5 inline-block" />
           )}
@@ -450,7 +483,7 @@ function FolderTreeItem({
         ) : (
           <Folder className="size-4 shrink-0" />
         )}
-        <span className="truncate">{folder.title || 'Untitled'}</span>
+        <span className="truncate font-medium">{folder.title || 'Untitled'}</span>
       </button>
       {isExpanded &&
         childFolders.map((child) => (
