@@ -125,7 +125,9 @@ function App() {
     let items: Bookmark[]
 
     if (currentFolderId === 'favorites') {
-      items = bookmarks.filter((b) => metadata[b.id]?.favorite)
+      items = bookmarks.filter((b) => !b.isFolder && metadata[b.id]?.favorite)
+    } else if (currentFolderId === 'favorite-folders') {
+      items = bookmarks.filter((b) => b.isFolder && metadata[b.id]?.favorite)
     } else {
       items = getChildren(currentFolderId)
     }
@@ -282,7 +284,7 @@ function App() {
               <h1 className="text-[15px] font-bold text-[#0f172a] tracking-tight">Bookmark Manager</h1>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <div className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <p className="text-[11px] text-[#94a3b8] font-medium">Synced with Brave</p>
+                <p className="text-[11px] text-[#94a3b8] font-medium">Synced with Browser</p>
               </div>
             </div>
           </div>
@@ -344,8 +346,10 @@ function App() {
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-3">
                 <h1 className="text-[22px] font-bold text-[#0f172a] tracking-tight">
-                  {currentFolderId === 'favorites'
-                    ? 'Favorites'
+                {currentFolderId === 'favorites'
+                  ? 'Favorites'
+                  : currentFolderId === 'favorite-folders'
+                    ? 'Favorite Folders'
                     : breadcrumbs.length > 0
                       ? breadcrumbs[breadcrumbs.length - 1].title || 'Untitled'
                       : 'Bookmarks Bar'}
@@ -438,6 +442,19 @@ function App() {
               >
                 <Heart className="size-4.5" />
               </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className={`size-10 rounded-xl transition-all duration-200 ${
+                  currentFolderId === 'favorite-folders'
+                    ? 'bg-[#059669]/10 text-[#059669]'
+                    : 'text-[#64748b] hover:bg-[#ecfdf5] hover:text-[#059669]'
+                }`}
+                title="Favorite Folders"
+                onClick={() => handleNavigate('favorite-folders')}
+              >
+                <FolderOpen className="size-4.5" />
+              </Button>
               <div className="w-px h-6 bg-[#e2e8f0] mx-1" />
               {folderCount > 0 && (
                 <Badge
@@ -528,6 +545,8 @@ function App() {
               <div className="size-20 rounded-2xl bg-gradient-to-br from-[#f1f5f9] to-[#f0f4ff] flex items-center justify-center mb-5 shadow-inner">
                 {currentFolderId === 'favorites' ? (
                   <Heart className="size-10 text-[#cbd5e1]" />
+                ) : currentFolderId === 'favorite-folders' ? (
+                  <FolderOpen className="size-10 text-[#cbd5e1]" />
                 ) : (
                   <Folder className="size-10 text-[#cbd5e1]" />
                 )}
@@ -536,15 +555,19 @@ function App() {
                 {search || filterFavorite || filterTag
                   ? 'No results found'
                   : currentFolderId === 'favorites'
-                    ? 'No favorites yet'
-                    : 'This folder is empty'}
+                    ? 'No favorite bookmarks yet'
+                    : currentFolderId === 'favorite-folders'
+                      ? 'No favorite folders yet'
+                      : 'This folder is empty'}
               </p>
               <p className="text-[#94a3b8] text-[13px] mt-1.5 max-w-[300px] leading-relaxed">
                 {search || filterFavorite || filterTag
                   ? 'Try adjusting your search terms or filters'
                   : currentFolderId === 'favorites'
                     ? 'Click the heart icon on any bookmark to add it to favorites'
-                    : 'Add bookmarks or create folders to organize your links'}
+                    : currentFolderId === 'favorite-folders'
+                      ? 'Click the heart icon on any folder to add it to favorites'
+                      : 'Add bookmarks or create folders to organize your links'}
               </p>
               {!search && (
                 <Button
