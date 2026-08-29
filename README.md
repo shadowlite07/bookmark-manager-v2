@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="logo.svg" alt="Memex Logo" width="120" />
+<img src="public/logo.svg" alt="Memex Logo" width="120" />
 
 # Memex
 
@@ -246,6 +246,6 @@ MIT © 2026
 
 **Built with care for the modern web.**
 
-<img src="logo.svg" alt="Memex" width="40" />
+<img src="public/logo.svg" alt="Memex" width="40" />
 
 </div>
