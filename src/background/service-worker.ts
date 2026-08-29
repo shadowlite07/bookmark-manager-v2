@@ -1,4 +1,4 @@
-// Background service worker for Bookmark Manager extension
+// Background service worker for Memex extension
 // Handles real-time bookmark sync via chrome.bookmarks API
 
 const METADATA_PREFIX = 'bm-meta-'

@@ -295,7 +295,7 @@ function App() {
           <div className="flex items-center gap-3">
             <img src="/logo.svg" alt="Logo" className="size-10 rounded-xl shadow-lg shadow-[#6366f1]/20" />
             <div>
-              <h1 className="text-[15px] font-bold text-[#0f172a] tracking-tight">Bookmark Manager</h1>
+              <h1 className="text-[15px] font-bold text-[#0f172a] tracking-tight">Memex</h1>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <div className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 <p className="text-[11px] text-[#94a3b8] font-medium">Synced with Browser</p>
