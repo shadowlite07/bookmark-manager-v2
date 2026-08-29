@@ -207,36 +207,6 @@ function App() {
         {/* Navigation */}
         <nav className="flex-1 overflow-y-auto px-3 py-4 text-[13px] min-h-0">
           <p className="px-3 pb-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[#94a3b8]">
-            Quick Access
-          </p>
-          <div className="space-y-1">
-            <button
-              className={`flex items-center gap-2.5 w-full px-3 py-2.5 rounded-xl text-left transition-all duration-200 ${
-                currentFolderId === '1'
-                  ? 'bg-gradient-to-r from-[#6366f1] to-[#818cf8] text-white shadow-lg shadow-[#6366f1]/25'
-                  : 'text-[#334155] hover:bg-[#f1f5f9] hover:text-[#0f172a]'
-              }`}
-              onClick={() => handleNavigate('1')}
-            >
-              <Home className="size-4 shrink-0" />
-              <span className="font-medium">Bookmarks Bar</span>
-            </button>
-            <button
-              className={`flex items-center gap-2.5 w-full px-3 py-2.5 rounded-xl text-left transition-all duration-200 ${
-                currentFolderId === '2'
-                  ? 'bg-gradient-to-r from-[#6366f1] to-[#818cf8] text-white shadow-lg shadow-[#6366f1]/25'
-                  : 'text-[#334155] hover:bg-[#f1f5f9] hover:text-[#0f172a]'
-              }`}
-              onClick={() => handleNavigate('2')}
-            >
-              <Star className="size-4 shrink-0" />
-              <span className="font-medium">Other Bookmarks</span>
-            </button>
-          </div>
-
-          <div className="my-5 mx-3 border-t border-[#e2e8f0]/60" />
-
-          <p className="px-3 pb-2 text-[10px] font-bold uppercase tracking-[0.08em] text-[#94a3b8]">
             Folders
           </p>
           {sidebarFolders.length === 0 && (
@@ -265,20 +235,6 @@ function App() {
         </nav>
 
         {/* Footer */}
-        <div className="p-3 border-t border-[#e2e8f0]/80 shrink-0 bg-white/50">
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full justify-start gap-2.5 h-10 border-[#e2e8f0] text-[#334155] hover:bg-[#f1f5f9] hover:border-[#6366f1]/30 rounded-xl transition-all duration-200"
-            onClick={() => {
-              setFormMode('folder')
-              setFormOpen(true)
-            }}
-          >
-            <FolderPlus className="size-4 shrink-0" />
-            <span className="font-medium">New Folder</span>
-          </Button>
-        </div>
       </aside>
 
       {/* ===== MAIN ===== */}
@@ -313,6 +269,33 @@ function App() {
               </nav>
             </div>
             <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                className={`size-10 rounded-xl transition-all duration-200 ${
+                  currentFolderId === '1'
+                    ? 'bg-[#6366f1]/10 text-[#6366f1]'
+                    : 'text-[#64748b] hover:bg-[#f1f5f9] hover:text-[#334155]'
+                }`}
+                title="Bookmarks Bar"
+                onClick={() => handleNavigate('1')}
+              >
+                <Home className="size-4.5" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className={`size-10 rounded-xl transition-all duration-200 ${
+                  currentFolderId === '2'
+                    ? 'bg-[#6366f1]/10 text-[#6366f1]'
+                    : 'text-[#64748b] hover:bg-[#f1f5f9] hover:text-[#334155]'
+                }`}
+                title="Other Bookmarks"
+                onClick={() => handleNavigate('2')}
+              >
+                <Star className="size-4.5" />
+              </Button>
+              <div className="w-px h-6 bg-[#e2e8f0] mx-1" />
               {folderCount > 0 && (
                 <Badge
                   variant="secondary"
@@ -351,6 +334,16 @@ function App() {
               <option value="alpha">A to Z</option>
               <option value="alpha-reverse">Z to A</option>
             </select>
+            <Button
+              onClick={() => {
+                setFormMode('folder')
+                setFormOpen(true)
+              }}
+              className="h-11 px-5 bg-gradient-to-r from-[#059669] to-[#10b981] hover:from-[#047857] hover:to-[#059669] text-white rounded-xl shadow-lg shadow-[#059669]/25 hover:shadow-xl hover:shadow-[#059669]/30 transition-all duration-200 font-medium"
+            >
+              <FolderPlus className="size-4 mr-2" strokeWidth={2.5} />
+              New Folder
+            </Button>
             <Button
               onClick={() => {
                 setFormMode('bookmark')
