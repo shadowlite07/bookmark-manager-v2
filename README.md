@@ -10,6 +10,7 @@ Built with React, TypeScript, and Tailwind CSS · Chrome Extension (Manifest V3)
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](#installation)
 [![Edge Add-ons](https://img.shields.io/badge/Edge-Add--ons-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white)](#installation)
+[![Firefox Add-on](https://img.shields.io/badge/Firefox-Add--on-FF7139?style=for-the-badge&logo=firefox&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/memex-bookmarks/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-6366f1?style=for-the-badge)](LICENSE)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
@@ -76,13 +77,26 @@ Unlike traditional bookmark managers that store data in their own database, **Me
 
 ## Screenshots
 
-<div align="center">
+<table>
+<tr>
+<td align="center" valign="top" width="26%">
 
-| Sidebar | Card Grid | Import |
-|---------|-----------|--------|
-| Folder tree with custom icons, favourites, and tag filters | Bookmark cards with favicons, heart toggle, and hover actions | Full JSON import with nested folder creation |
+<a href="public/sidebar.png"><img src="public/sidebar.png" alt="Memex sidebar showing the folder tree, breadcrumbs, and folder cards" width="225" /></a>
 
-</div>
+<br />
+<sub><b>Folder tree</b> — recursive navigation with search, breadcrumbs, and item counts</sub>
+
+</td>
+<td align="center" valign="top" width="74%">
+
+<a href="public/card-grid.png"><img src="public/card-grid.png" alt="Memex card grid with search, favourite and tag filters, sort control, and folder cards" width="610" /></a>
+
+<br />
+<sub><b>Card grid</b> — search, favourite and tag filters, sorting, and the responsive grid</sub>
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -135,7 +149,7 @@ bookmark-manager-v2/
 
 - Node.js 18+
 - npm or pnpm
-- Chrome or Edge browser
+- Chrome, Edge, or Firefox
 
 ### Development
 
@@ -153,10 +167,7 @@ npm run dev
 
 ### Load Extension in Browser
 
-1. Navigate to `chrome://extensions` (or `edge://extensions`)
-2. Enable **Developer mode**
-3. Click **Load unpacked**
-4. Select the `dist/` folder
+See [How to Use](#how-to-use) for per-browser instructions.
 
 ### Production Build
 
@@ -174,12 +185,42 @@ This outputs to `dist/` — zip the contents for store upload.
 
 1. Download or clone this repository
 2. Run `npm install && npm run build`
-3. Load the `dist/` folder as an unpacked extension
+3. Load the extension in your browser — see [How to Use](#how-to-use)
 4. Click the Memex icon to open in a new tab
 
 ### From Web Store
 
-> Coming soon
+**Firefox** — [Memex on Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/memex-bookmarks/)
+
+> Chrome Web Store and Edge Add-ons listings are coming soon.
+
+---
+
+## How to Use
+
+Build the extension first with `npm run build` — this outputs everything needed to `dist/`.
+
+### Firefox
+
+**Easiest — install from the store:**
+
+1. Open the [Memex add-on page](https://addons.mozilla.org/en-US/firefox/addon/memex-bookmarks/)
+2. Click **Add to Firefox** and confirm
+
+**Or load a local build:**
+
+1. Run `npm run build`
+2. Go to `about:debugging#/runtime/this-firefox`
+3. Click **Load Temporary Add-on…**
+4. Select `dist/manifest.json`
+
+The extension is now loaded — click the Memex icon in the toolbar to open it.
+
+> **Note:** Firefox clears temporary add-ons when it closes. After a restart, load it again from the same page, or sign the build to install it permanently.
+
+### Other Browsers
+
+> Nothing yet.
 
 ---
 
