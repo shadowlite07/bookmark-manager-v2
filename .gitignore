@@ -8,12 +8,18 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
 dist-ssr
 *.local
 *.zip
 bookmarks-*.json
 .freebuff
+
+# Build output is intentionally tracked so users can load dist/ without building.
+# But never track signing material:
+# dist.pem is the private signing key - anyone with it can sign updates.
+# dist.crx is a regenerable signed artifact, redundant with dist/.
+dist.pem
+dist.crx
 
 # Editor directories and files
 .vscode/*

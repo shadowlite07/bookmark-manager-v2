@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Memex",
+  "version": "1.0.0",
+  "description": "Keep your bookmarks organized and in sync with your browser.",
+  "permissions": [
+    "bookmarks",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_icon": {
+      "16": "logo.svg",
+      "48": "logo.svg",
+      "128": "logo.svg"
+    },
+    "default_title": "Open Bookmark Manager"
+  },
+  "icons": {
+    "16": "logo.svg",
+    "48": "logo.svg",
+    "128": "logo.svg"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "memex-bookmark-manager@local",
+      "strict_min_version": "109.0"
+    }
+  }
+}
