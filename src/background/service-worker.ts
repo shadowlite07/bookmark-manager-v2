@@ -23,7 +23,14 @@ async function wasAppAction(): Promise<boolean> {
 
 async function syncBookmarkTree() {
   const tree = await chrome.bookmarks.getTree()
-  const flat = flattenTree(tree)
+  // getTree() always returns a single-element array: [trueRoot]. trueRoot's
+  // own id is browser-specific and irrelevant to us — Chrome/Edge use "0",
+  // Firefox uses a different id entirely (not "0"). Rather than guess at
+  // that id, we skip trueRoot itself and flatten starting from ITS
+  // children, explicitly normalizing them onto our own universal parent id
+  // "0" — the id every part of this extension actually keys off of.
+  const trueRoot = tree[0]
+  const flat = trueRoot?.children ? flattenTree(trueRoot.children, '0') : []
   await chrome.storage.local.set({ bookmarkTree: flat })
 }
 
@@ -47,18 +54,18 @@ interface BookmarkMetadata {
 
 function flattenTree(
   nodes: chrome.bookmarks.BookmarkTreeNode[],
-  parentId: string | null = null
+  parentId: string
 ): FlatBookmark[] {
   const result: FlatBookmark[] = []
   for (const node of nodes) {
-    if (node.id === '0') {
-      // Root node — recurse into children without adding it
-      if (node.children) result.push(...flattenTree(node.children, null))
-      continue
-    }
     result.push({
       id: node.id,
-      parentId: node.parentId ?? parentId,
+      // Always use the parentId we recursed down with, not node.parentId —
+      // we're reconstructing the tree top-down from `children` arrays
+      // ourselves, so we already know the correct parent at every level.
+      // Trusting the browser's own node.parentId here is what let Firefox's
+      // real (non-"0") root id leak in and break everything downstream.
+      parentId,
       title: node.title,
       url: node.url ?? '',
       dateAdded: node.dateAdded ?? 0,
@@ -123,9 +130,15 @@ chrome.runtime.onMessage.addListener(
         url: string
       }
       setAppActionFlag()
-      chrome.bookmarks.create({ parentId, title, url }, (node: chrome.bookmarks.BookmarkTreeNode) => {
-        sendResponse(node)
-      })
+      // Promise form (no callback) works in both Chrome MV3 and Firefox, and
+      // lets us actually catch and report failures — e.g. an invalid
+      // parentId — instead of a callback that silently never fires.
+      chrome.bookmarks
+        .create({ parentId, title, url })
+        .then((node: chrome.bookmarks.BookmarkTreeNode) => sendResponse(node))
+        .catch((err: unknown) =>
+          sendResponse({ error: err instanceof Error ? err.message : String(err) })
+        )
       return true
     }
 
@@ -139,18 +152,24 @@ chrome.runtime.onMessage.addListener(
       const changes: { title?: string; url?: string } = {}
       if (title !== undefined) changes.title = title
       if (url !== undefined) changes.url = url
-      chrome.bookmarks.update(id, changes, (node: chrome.bookmarks.BookmarkTreeNode) => {
-        sendResponse(node)
-      })
+      chrome.bookmarks
+        .update(id, changes)
+        .then((node: chrome.bookmarks.BookmarkTreeNode) => sendResponse(node))
+        .catch((err: unknown) =>
+          sendResponse({ error: err instanceof Error ? err.message : String(err) })
+        )
       return true
     }
 
     if (message.type === 'REMOVE_BOOKMARK') {
       const { id } = message.payload as { id: string }
       setAppActionFlag()
-      chrome.bookmarks.remove(id, () => {
-        sendResponse({ ok: true })
-      })
+      chrome.bookmarks
+        .remove(id)
+        .then(() => sendResponse({ ok: true }))
+        .catch((err: unknown) =>
+          sendResponse({ error: err instanceof Error ? err.message : String(err) })
+        )
       return true
     }
 
@@ -160,9 +179,12 @@ chrome.runtime.onMessage.addListener(
         title: string
       }
       setAppActionFlag()
-      chrome.bookmarks.create({ parentId, title }, (node: chrome.bookmarks.BookmarkTreeNode) => {
-        sendResponse(node)
-      })
+      chrome.bookmarks
+        .create({ parentId, title })
+        .then((node: chrome.bookmarks.BookmarkTreeNode) => sendResponse(node))
+        .catch((err: unknown) =>
+          sendResponse({ error: err instanceof Error ? err.message : String(err) })
+        )
       return true
     }
 
@@ -173,9 +195,12 @@ chrome.runtime.onMessage.addListener(
         index: number
       }
       setAppActionFlag()
-      chrome.bookmarks.move(id, { parentId, index }, (node: chrome.bookmarks.BookmarkTreeNode) => {
-        sendResponse(node)
-      })
+      chrome.bookmarks
+        .move(id, { parentId, index })
+        .then((node: chrome.bookmarks.BookmarkTreeNode) => sendResponse(node))
+        .catch((err: unknown) =>
+          sendResponse({ error: err instanceof Error ? err.message : String(err) })
+        )
       return true
     }
 

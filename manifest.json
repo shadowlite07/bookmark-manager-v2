@@ -9,7 +9,7 @@
   ],
   "background": {
     "service_worker": "background.js",
-    "type": "module"
+    "scripts": ["background.js"]
   },
   "action": {
     "default_icon": {
@@ -23,5 +23,11 @@
     "16": "logo.svg",
     "48": "logo.svg",
     "128": "logo.svg"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "memex-bookmark-manager@local",
+      "strict_min_version": "109.0"
+    }
   }
 }

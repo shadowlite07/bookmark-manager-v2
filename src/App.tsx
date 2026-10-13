@@ -39,11 +39,15 @@ function App() {
 
   const [search, setSearch] = useState('')
   const [sort, setSort] = useState<SortOption>('newest')
-  const [currentFolderId, setCurrentFolderId] = useState('1')
+  // '0' is the universal virtual root every browser's bookmark tree hangs off of.
+  // Chrome/Edge expose two real roots under it (ids '1' and '2'); Firefox exposes
+  // four (with non-numeric ids like 'toolbar_____'). Starting at '0' and reading
+  // real roots from the data (see `realRoots` below) keeps this working on both.
+  const [currentFolderId, setCurrentFolderId] = useState('0')
   const [formOpen, setFormOpen] = useState(false)
   const [formMode, setFormMode] = useState<'bookmark' | 'folder'>('bookmark')
   const [editingItem, setEditingItem] = useState<Bookmark | undefined>()
-  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set(['1', '2']))
+  const [expandedFolders, setExpandedFolders] = useState<Set<string>>(new Set(['0']))
   const [sidebarSearch, setSidebarSearch] = useState('')
   const [filterFavorite, setFilterFavorite] = useState(false)
   const [filterTag, setFilterTag] = useState('')
@@ -82,47 +86,111 @@ function App() {
 
       const idMap: Record<string, string> = {}
 
-      function resolveParentId(parentId: string): string {
+      // The real top-level folders of THIS browser, in THIS profile — e.g. two
+      // on Chrome/Edge ('Bookmarks bar', 'Other bookmarks'), four on Firefox
+      // ('Bookmarks Menu', 'Bookmarks Toolbar', 'Other Bookmarks', 'Mobile
+      // Bookmarks). An imported file's own root ids ('0'/'1'/'2') are just
+      // placeholders from whatever browser exported it — they don't
+      // necessarily exist here, so anything that points at one gets remapped
+      // onto this browser's actual first real root instead.
+      const realRoots = bookmarks
+        .filter((b) => b.parentId === '0' && b.isFolder)
+        .sort((a, b) => a.title.localeCompare(b.title))
+      const defaultRealRoot = realRoots[0]?.id ?? '1'
+
+      function resolveParentId(parentId: string): string | null {
         if (idMap[parentId]) return idMap[parentId]
-        if (parentId === '1') return '1'
-        if (parentId === '2') return '2'
-        if (parentId === '0') return '0'
-        return parentId
+        if (parentId === '0' || parentId === '1' || parentId === '2') return defaultRealRoot
+        const knownIds = new Set(bookmarks.map((b) => b.id))
+        if (knownIds.has(parentId)) return parentId
+        // Parent not resolvable yet — it's probably a folder from this same
+        // file that hasn't been created yet. Signal "not ready" (null)
+        // instead of guessing, so the multi-pass loop below can retry it
+        // once that folder exists.
+        return null
       }
 
+      // Process items in dependency order rather than file order: a folder
+      // from this import might list its parent folder later in the array
+      // (or not at all, if the export tool didn't order things depth-first).
+      // Repeat passes over whatever's left until nothing more can be
+      // resolved, so ordering in the source file never matters.
+      let pending = [...data.bookmarks]
       let imported = 0
-      for (const item of data.bookmarks) {
-        const resolvedParent = resolveParentId(item.parentId || '1')
+      let failed = 0
+      const errors: string[] = []
+      let progressed = true
 
-        if (item.isFolder) {
-          const existing = bookmarks.find((b) => b.id === item.id)
-          if (!existing) {
-            const newNode = await createFolder(resolvedParent, item.title)
-            if (newNode) idMap[item.id] = newNode
-            imported++
+      async function importItem(item: (typeof data.bookmarks)[number], resolvedParent: string) {
+        try {
+          if (item.isFolder) {
+            const existing = bookmarks.find((b) => b.id === item.id)
+            if (!existing) {
+              const newId = await createFolder(resolvedParent, item.title)
+              idMap[item.id] = newId
+              imported++
+            } else {
+              idMap[item.id] = existing.id
+            }
           } else {
-            idMap[item.id] = existing.id
+            const existing = bookmarks.find((b) => b.id === item.id)
+            if (!existing) {
+              await addBookmark({ title: item.title, url: item.url, parentId: resolvedParent })
+              imported++
+            }
           }
-        } else {
-          const existing = bookmarks.find((b) => b.id === item.id)
-          if (!existing) {
-            await addBookmark({ title: item.title, url: item.url, parentId: resolvedParent })
-            imported++
+          if (item.metadata) {
+            const targetId = idMap[item.id] || item.id
+            await setMeta(targetId, {
+              tags: item.metadata.tags ?? [],
+              description: item.metadata.description ?? '',
+              icon: item.metadata.icon,
+              favorite: item.metadata.favorite,
+            })
           }
-        }
-        if (item.metadata) {
-          const targetId = idMap[item.id] || item.id
-          await setMeta(targetId, {
-            tags: item.metadata.tags ?? [],
-            description: item.metadata.description ?? '',
-            icon: item.metadata.icon,
-            favorite: item.metadata.favorite,
-          })
+        } catch (err) {
+          failed++
+          const msg = err instanceof Error ? err.message : String(err)
+          if (errors.length < 5) errors.push(`"${item.title}": ${msg}`)
+          console.error('Import failed for item', item, err)
         }
       }
-      alert(`Imported ${imported} new bookmarks`)
-    } catch {
-      alert('Failed to parse bookmark file')
+
+      while (pending.length > 0 && progressed) {
+        progressed = false
+        const stillPending: typeof pending = []
+
+        for (const item of pending) {
+          const resolvedParent = resolveParentId(item.parentId || defaultRealRoot)
+          if (resolvedParent === null) {
+            stillPending.push(item)
+            continue
+          }
+          progressed = true
+          await importItem(item, resolvedParent)
+        }
+
+        pending = stillPending
+      }
+
+      // Anything left after passes stop making progress has a parent that
+      // will never resolve (e.g. its own id, or a parent missing from the
+      // file entirely) — place it at the default root instead of dropping it.
+      for (const item of pending) {
+        await importItem(item, defaultRealRoot)
+      }
+
+      if (failed === 0) {
+        alert(`Imported ${imported} new bookmarks`)
+      } else {
+        alert(
+          `Imported ${imported} new bookmarks, ${failed} failed.\n\n` +
+            `First errors:\n${errors.join('\n')}` +
+            (failed > errors.length ? `\n...and ${failed - errors.length} more` : '')
+        )
+      }
+    } catch (err) {
+      alert(`Failed to read or parse bookmark file: ${err instanceof Error ? err.message : String(err)}`)
     }
   }
 
@@ -191,6 +259,19 @@ function App() {
     }
     return filtered.sort((a, b) => a.title.localeCompare(b.title))
   }, [bookmarks, sidebarSearch])
+
+  // The browser's own real root folders (Bookmarks Bar/Toolbar, Other/Unfiled
+  // Bookmarks, and on Firefox also Bookmarks Menu + Mobile Bookmarks). Used
+  // to drive the quick-nav buttons without hardcoding browser-specific ids.
+  const realRoots = useMemo(
+    () =>
+      bookmarks
+        .filter((b) => b.parentId === '0' && b.isFolder)
+        .sort((a, b) => a.title.localeCompare(b.title)),
+    [bookmarks]
+  )
+  const primaryRoot = realRoots[0]
+  const secondaryRoot = realRoots[1] ?? realRoots[0]
 
   const getChildFolders = useCallback(
     (parentId: string): Bookmark[] => {
@@ -366,7 +447,7 @@ function App() {
                     ? 'Favorite Folders'
                     : breadcrumbs.length > 0
                       ? breadcrumbs[breadcrumbs.length - 1].title || 'Untitled'
-                      : 'Bookmarks Bar'}
+                      : 'Home'}
                 </h1>
                 <div className="flex items-center gap-1">
                   <input
@@ -399,7 +480,7 @@ function App() {
               <nav className="flex items-center gap-1 text-[12px] text-[#94a3b8] mt-1.5">
                 <button
                   className="hover:text-[#6366f1] transition-colors font-medium"
-                  onClick={() => handleNavigate('1')}
+                  onClick={() => handleNavigate('0')}
                 >
                   Home
                 </button>
@@ -417,32 +498,36 @@ function App() {
               </nav>
             </div>
             <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`size-10 rounded-xl transition-all duration-200 ${
-                  currentFolderId === '1'
-                    ? 'bg-[#6366f1]/10 text-[#6366f1]'
-                    : 'text-[#64748b] hover:bg-[#f1f5f9] hover:text-[#334155]'
-                }`}
-                title="Bookmarks Bar"
-                onClick={() => handleNavigate('1')}
-              >
-                <Home className="size-4.5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`size-10 rounded-xl transition-all duration-200 ${
-                  currentFolderId === '2'
-                    ? 'bg-[#6366f1]/10 text-[#6366f1]'
-                    : 'text-[#64748b] hover:bg-[#f1f5f9] hover:text-[#334155]'
-                }`}
-                title="Other Bookmarks"
-                onClick={() => handleNavigate('2')}
-              >
-                <Star className="size-4.5" />
-              </Button>
+              {primaryRoot && (
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={`size-10 rounded-xl transition-all duration-200 ${
+                    currentFolderId === primaryRoot.id
+                      ? 'bg-[#6366f1]/10 text-[#6366f1]'
+                      : 'text-[#64748b] hover:bg-[#f1f5f9] hover:text-[#334155]'
+                  }`}
+                  title={primaryRoot.title}
+                  onClick={() => handleNavigate(primaryRoot.id)}
+                >
+                  <Home className="size-4.5" />
+                </Button>
+              )}
+              {secondaryRoot && (
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={`size-10 rounded-xl transition-all duration-200 ${
+                    currentFolderId === secondaryRoot.id
+                      ? 'bg-[#6366f1]/10 text-[#6366f1]'
+                      : 'text-[#64748b] hover:bg-[#f1f5f9] hover:text-[#334155]'
+                  }`}
+                  title={secondaryRoot.title}
+                  onClick={() => handleNavigate(secondaryRoot.id)}
+                >
+                  <Star className="size-4.5" />
+                </Button>
+              )}
               <Button
                 variant="ghost"
                 size="icon"
@@ -623,7 +708,7 @@ function App() {
         onSaveMetadata={handleSaveMetadata}
         onSaveFolder={handleSaveFolder}
         folders={folders}
-        currentFolderId={currentFolderId}
+        currentFolderId={currentFolderId === '0' ? primaryRoot?.id ?? currentFolderId : currentFolderId}
         initialData={editingItem}
         initialMetadata={editingItem ? metadata[editingItem.id] : undefined}
         mode={formMode}

@@ -77,15 +77,20 @@ export function useBrowserBookmarks() {
 
   const addBookmark = useCallback(
     async (data: { title: string; url: string; parentId?: string }) => {
-      const parent = data.parentId ?? '1'
-      const node = (await sendMessage({
+      // Fall back to this browser's actual first root folder rather than the
+      // hardcoded Chrome id '1', which doesn't exist on Firefox.
+      const fallbackRoot = bookmarks.find((b) => b.parentId === '0' && b.isFolder)?.id ?? '1'
+      const parent = data.parentId ?? fallbackRoot
+      const response = (await sendMessage({
         type: 'CREATE_BOOKMARK',
         payload: { parentId: parent, title: data.title, url: data.url },
-      })) as { id: string } | null
+      })) as { id: string; error?: string } | null
+      if (!response) throw new Error('No response from background script — is the extension running?')
+      if (response.error) throw new Error(response.error)
       await fetchBookmarks()
-      return node?.id
+      return response.id
     },
-    [fetchBookmarks]
+    [fetchBookmarks, bookmarks]
   )
 
   const deleteBookmark = useCallback(
@@ -112,12 +117,14 @@ export function useBrowserBookmarks() {
 
   const createFolder = useCallback(
     async (parentId: string, title: string) => {
-      const node = (await sendMessage({
+      const response = (await sendMessage({
         type: 'CREATE_FOLDER',
         payload: { parentId, title },
-      })) as { id: string } | null
+      })) as { id: string; error?: string } | null
+      if (!response) throw new Error('No response from background script — is the extension running?')
+      if (response.error) throw new Error(response.error)
       await fetchBookmarks()
-      return node?.id
+      return response.id
     },
     [fetchBookmarks]
   )

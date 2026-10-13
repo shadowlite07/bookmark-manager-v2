@@ -164,15 +164,15 @@ export function BookmarkForm({
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setParentId(e.target.value)}
                 className="w-full h-11 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-4 text-[13px] text-[#334155] outline-none focus:ring-2 focus:ring-[#6366f1]/20 cursor-pointer transition-all duration-200"
               >
-                <option value="1">Bookmarks Bar</option>
-                <option value="2">Other Bookmarks</option>
-                {folders
-                  .filter((f) => f.id !== '1' && f.id !== '2')
-                  .map((folder) => (
-                    <option key={folder.id} value={folder.id}>
-                      {folder.title || 'Untitled Folder'}
-                    </option>
-                  ))}
+                {/* `folders` already includes the browser's real root folders
+                   (Bookmarks Bar/Toolbar, Other/Unfiled Bookmarks, and on
+                   Firefox also Bookmarks Menu + Mobile Bookmarks) with their
+                   real titles and ids, so no need to hardcode any here. */}
+                {folders.map((folder) => (
+                  <option key={folder.id} value={folder.id}>
+                    {folder.title || 'Untitled Folder'}
+                  </option>
+                ))}
               </select>
             </div>
 

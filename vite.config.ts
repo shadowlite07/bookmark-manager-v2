@@ -17,12 +17,20 @@ function extensionPlugin() {
         path.join(distDir, 'manifest.json')
       )
 
-      // Move manager HTML to correct location
+      // Move manager HTML to correct location. Vite computes the asset paths
+      // inside it (e.g. "../../assets/...") relative to its ORIGINAL nested
+      // location (dist/src/manager/index.html, two levels below dist/).
+      // Moving the file up to dist/manager/index.html (one level below
+      // dist/) without rewriting those paths leaves them pointing one
+      // directory too high, outside dist/ entirely — so the manager page's
+      // JS/CSS silently fail to load. Rewrite "../../" -> "../" to match the
+      // file's new, shallower location.
       const srcHtml = path.join(distDir, 'src/manager/index.html')
       const destHtml = path.join(distDir, 'manager/index.html')
       if (fs.existsSync(srcHtml)) {
         fs.mkdirSync(path.join(distDir, 'manager'), { recursive: true })
-        fs.copyFileSync(srcHtml, destHtml)
+        const html = fs.readFileSync(srcHtml, 'utf-8').replaceAll('../../', '../')
+        fs.writeFileSync(destHtml, html)
         fs.rmSync(path.join(distDir, 'src'), { recursive: true })
       }
     },
